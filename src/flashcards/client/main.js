@@ -22,7 +22,13 @@ if(Meteor.isClient){
             if(wordId == selectedWord){
             return "selected"
     }
-    }
+    },
+
+        'showSelectedWord': function(){
+        var selectedWord = Session.get('selectedWord');
+        return WordsList.findOne(selectedWord)
+        }
+
     });
 
     Template.flashcard.events({

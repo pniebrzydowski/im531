@@ -13,6 +13,10 @@
     {{/each}}
     </ul>
 
+     {{#if showSelectedWord}}
+            Selected Word: {{showSelectedWord.name}} <br>
+        {{/if}}
+
     <input type="button" class="increment" value="Upvote">
     <input type="button" class="decrement" value="Downvote">
 </template>
