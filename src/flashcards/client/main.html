@@ -4,6 +4,7 @@
 <body>
     <h1>FlashCard</h1>
     {{> flashcard}}
+    {{> addWordForm}}
 </body>
 
 <template name="flashcard">
@@ -19,4 +20,11 @@
 
     <input type="button" class="increment" value="Upvote">
     <input type="button" class="decrement" value="Downvote">
+</template>
+
+<template name="addWordForm">
+    <form>
+        <input type="text" name="wordName">
+        <input type="submit" value="Add Word">
+    </form>
 </template>

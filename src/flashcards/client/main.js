@@ -46,8 +46,20 @@ if(Meteor.isClient){
     'click .decrement': function(){
     var selectedWord = Session.get('selectedWord');
     WordsList.update(selectedWord, {$inc: {score: -5} });
-    }
+    },
 });
+
+    Template.addWordForm.events({
+    'submit form': function(event){
+     event.preventDefault();
+    var wordNameVar = event.target.wordName.value;
+    WordsList.insert({
+          name: wordNameVar,
+          score: 0
+      });
+    }
+  });
+
 
 
 }
