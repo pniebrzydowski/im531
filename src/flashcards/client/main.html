@@ -5,6 +5,7 @@
     <h1>FlashCard</h1>
     {{> flashcard}}
     {{> addWordForm}}
+    {{> loginButtons}}
 </body>
 
 <template name="flashcard">
@@ -20,11 +21,14 @@
 
     <input type="button" class="increment" value="Upvote">
     <input type="button" class="decrement" value="Downvote">
+    <input type="button" class="remove" value="Remove Word">
 </template>
 
 <template name="addWordForm">
+    {{#if currentUser}}
     <form>
         <input type="text" name="wordName">
         <input type="submit" value="Add Word">
     </form>
+     {{/if}}
 </template>
