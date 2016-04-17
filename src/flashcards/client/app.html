@@ -1,1 +1,7 @@
-<p>1 + 2 = {{ 1 + 2 }}</p>
+<div>
+  <ul>
+    <li *ngFor="#word of words">
+      {{word.name}} : {{word.score}}
+    </li>
+  </ul>
+</div>
