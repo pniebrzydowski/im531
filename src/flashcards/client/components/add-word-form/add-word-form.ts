@@ -1,5 +1,6 @@
 import 'reflect-metadata';
 import {Component} from 'angular2/core';
+import {Mongo} from 'meteor/mongo';
 import {FormBuilder, ControlGroup, Validators, Control} from 'angular2/common';
 import {Words} from '../../../collections/words.ts';
 
@@ -8,8 +9,9 @@ import {Words} from '../../../collections/words.ts';
   selector: 'add-word-form',
   templateUrl: '/client/components/add-word-form/add-word-form.html'
 })
+
 export class AddWordForm {
-  partiesForm: ControlGroup;
+  addWordForm: ControlGroup;
  
   constructor() {
     let fb = new FormBuilder();
