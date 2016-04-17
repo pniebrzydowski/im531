@@ -9,7 +9,7 @@ html {
 
 body {
 	/* Background image */
-	background-color: #ffffff;
+	background-color: #98beae;
 	background-image: url("../img/bg-desk01.jpg");
 	background-position: center center;
 	background-repeat: no-repeat;
@@ -21,13 +21,13 @@ body {
 	height: 100%;
 }
 
-a {
+.forgot a {
 	text-decoration: none;
 	color: #ffffff;
 	-webkit-transition: .5s ease;
 	transition: .5s ease;
 }
-a:hover {
+.forgot a:hover {
 	color: #1fff6a;
 }
 
@@ -186,6 +186,7 @@ textarea {
 	/*letter-spacing: 0.1em;*/
 	background: #efefef;
 	color: #999999;
+	margin-bottom: 40px;
 	-webkit-transition: all 0.5s ease;
 	transition: all 0.5s ease;
 	-webkit-appearance: none;
@@ -224,5 +225,8 @@ textarea {
 		/*background: rgba(0, 0, 0, 0.15);*/
 		background: rgba(183, 220, 208, 0.3);
 		color: #ffffff;
+	}
+	.button {
+		margin-bottom: 0;
 	}
 }
