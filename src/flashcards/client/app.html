@@ -2,6 +2,8 @@
   <ul>
     <li *ngFor="#word of words">
       {{word.name}} : {{word.score}}
+      <button (click)="removeWord(word)">X</button>
     </li>
   </ul>
+  <add-word-form></add-word-form>
 </div>
