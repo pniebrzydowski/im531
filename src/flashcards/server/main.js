@@ -1,5 +1,5 @@
 import { Meteor } from 'meteor/meteor';
-WordsList = new Mongo.Collection('words');
+import {Words} from '../collections/words.ts';
 
 //UserAccounts = new Mongo.Collection('users');
 
@@ -11,3 +11,4 @@ Meteor.startup(() => {
 if(Meteor.isServer){
     console.log("Hello server");
 }
+
