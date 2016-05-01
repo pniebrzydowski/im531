@@ -1,28 +1,22 @@
 import 'reflect-metadata';
 import 'zone.js/dist/zone';
-import {Component} from 'angular2/core';
-import {Mongo} from 'meteor/mongo';
+import {Component, provide} from 'angular2/core';
 import {bootstrap} from 'angular2-meteor-auto-bootstrap';
-import {Words} from '../collections/words';
-import {AddWordForm} from './components/add-word-form/add-word-form';
+import {ROUTER_PROVIDERS, ROUTER_DIRECTIVES, RouteConfig, APP_BASE_HREF} from 'angular2/router';
+import {WordList} from './components/word-list/word-list';
 import {ReviewWords} from './components/review-words/review-words';
  
 @Component({
   selector: 'app',
   templateUrl: 'client/app.html',
-  directives: [AddWordForm,ReviewWords]
+  directives: [ROUTER_DIRECTIVES]
 })
 
-class Flashcards {
-  words: Mongo.Cursor<Object>;
-  
-  constructor () {
-    this.words = Words.find();
-  }
-  
-  removeWord(word) {
-    Words.remove(word._id);
-  }
-}
+@RouteConfig([
+  { path: '/words', as: 'WordList', component: WordList },
+  { path: '/review', as: 'ReviewWords', component: ReviewWords }
+])
+
+class Flashcards {}
  
-bootstrap(Flashcards);
+bootstrap(Flashcards, [ROUTER_PROVIDERS, provide(APP_BASE_HREF, { useValue: '/' })]);
