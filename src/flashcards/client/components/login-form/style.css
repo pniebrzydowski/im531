@@ -90,9 +90,7 @@ body {
 	background: #efefef;
 	color: #999999;
 }
-.tab-content > div:last-child {
-	display: none;
-}
+
 /**********************/
 
 h1 {

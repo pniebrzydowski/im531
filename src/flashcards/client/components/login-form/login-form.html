@@ -1,18 +1,19 @@
 <div class="form">
 	<div class="anki-logo">
-		<a href="index.html"> <img src="/img/ankilogo-white.svg"
+		<a href=""> <img src="/img/ankilogo-white.svg"
 			alt="anki-logo">
 		</a>
 	</div>
 
 	<ul class="tab-group">
-		<li class="tab active" id="tab-login"><a href="#login">Log In</a></li>
-		<li class="tab" id="tab-singup"><a href="#signup">Sign Up</a></li>
+		<li class="tab" [class.active]="currentTab == 'login'" id="tab-login">
+			<a (click)="setCurrentTab('login')">Log In</a></li>
+		<li class="tab" [class.active]="currentTab == 'signup'" id="tab-singup">
+			<a (click)="setCurrentTab('signup')">Sign Up</a></li>
 	</ul>
 
 	<div class="tab-content">
-
-		<div id="login">
+		<div id="login" *ngIf="currentTab == 'login'">
 			<h1>Great to See You Again!</h1>
 
 			<form> <!-- action="/" method="post"> -->
@@ -37,7 +38,7 @@
 		</div>
 		<!-- login ends -->
 
-		<div id="signup">
+		<div id="signup" *ngIf="currentTab == 'signup'">
 			<h1>Sign Up for Free</h1>
 
 			<form><!-- action="/" method="post"> -->

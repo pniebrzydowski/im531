@@ -11,4 +11,14 @@ import {Mongo} from 'meteor/mongo';
   templateUrl: '/client/components/login-form/login-form.html'
 })
 
-export class LoginForm {}
+export class LoginForm {
+	currentTab;
+	
+	constructor () {
+		this.currentTab = 'login';
+	}
+	
+	setCurrentTab(tabName) {
+		this.currentTab = tabName;
+	}
+}
