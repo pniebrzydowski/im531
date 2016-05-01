@@ -3,7 +3,7 @@ import 'zone.js/dist/zone';
 import {Component} from 'angular2/core';
 import {Mongo} from 'meteor/mongo';
 import {AddWordForm} from '../add-word-form/add-word-form';
-import {Words} from '../../../collections/words.ts';
+import {Words} from '../../../collections/words';
  
 @Component({
   selector: 'word-list',

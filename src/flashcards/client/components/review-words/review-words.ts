@@ -2,7 +2,7 @@ import 'reflect-metadata';
 import 'zone.js/dist/zone';
 import {Component} from 'angular2/core';
 import {Mongo} from 'meteor/mongo';
-import {Words} from '../../../collections/words.ts';
+import {Words} from '../../../collections/words';
  
 @Component({
   selector: 'review-words',
