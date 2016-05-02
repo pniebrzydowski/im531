@@ -9,12 +9,12 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr>
-			<td>Deck #1</td>
-			<td>3</td>
+		<tr *ngFor="#deck of decks">
+			<td>{{deck.name}}</td>
+			<td>{{deck.wordCount}}</td>
 			<td>
-				<a href="/words">Edit Deck</a>
-				<a href="/review">Review Deck</a>
+				<a [routerLink]="['/WordList', {deckId: deck._id}]">Edit Deck</a>
+				<a [routerLink]="['/ReviewWords', {deckId: deck._id}]">Review Deck</a>
 			</td>
 		</tr>
 	</tbody>

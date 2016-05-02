@@ -10,16 +10,16 @@ import {WordList} from './components/word-list/word-list';
 import {ReviewWords} from './components/review-words/review-words';
  
 @Component({
-  selector: 'app',
-  templateUrl: 'client/app.html',
-  directives: [ROUTER_DIRECTIVES]
+	selector: 'app',
+	templateUrl: 'client/app.html',
+	directives: [ROUTER_DIRECTIVES]
 })
 
 @RouteConfig([
-  { path: '/login', as: 'LoginForm', component: LoginForm },
-  { path: '/decks', as: 'DeckList', component: DeckList },
-  { path: '/words', as: 'WordList', component: WordList },
-  { path: '/review', as: 'ReviewWords', component: ReviewWords }
+	{ path: '/login', as: 'LoginForm', component: LoginForm },
+	{ path: '/decks', as: 'DeckList', component: DeckList },
+	{ path: '/words/:deckId', as: 'WordList', component: WordList },
+	{ path: '/review/:deckId', as: 'ReviewWords', component: ReviewWords }
 ])
 
 class Flashcards {}
