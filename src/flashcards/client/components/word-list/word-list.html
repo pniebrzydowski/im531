@@ -1,7 +1,20 @@
-<ul>
-	<li *ngFor="#word of words">
-		{{word.name}} : {{word.score}}
-		<button (click)="removeWord(word)">X</button>
-	</li>
-</ul>
+<h1>Deck #1 - Edit</h1>
+<table>
+	<thead>
+		<tr>
+			<th>Word</th>
+			<th>Current Score</th>
+			<th>Remove Word</th>
+	</thead>
+	<tbody>
+		<tr *ngFor="#word of words">
+			<td>{{word.name}}</td>
+			<td>{{word.score}}</td>
+			<td><button (click)="removeWord(word)">X</button></td>
+		</tr>
+	</tbody>
+</table>
+
+<hr>
+
 <add-word-form></add-word-form>
