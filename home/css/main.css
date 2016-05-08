@@ -1,0 +1,115 @@
+*,
+*:after,
+*:before {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.clearfix:before,
+.clearfix:after {
+	display: table;
+	content: '';
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+body {
+	font-family: "Avenir Next", Avenir, 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+	color: #212121;
+	background: #e5e5e5;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	width: 100vw;
+}
+
+a {
+	color: #777777;
+	text-decoration: none;
+}
+
+a:hover,
+a:focus {
+	color: #555555;
+	-webkit-transition: 0.4s ease;
+	transition: 0.4s ease;
+}
+
+button:focus {
+	outline: none;
+}
+
+.hidden {
+	position: absolute;
+	overflow: hidden;
+	width: 0;
+	height: 0;
+	pointer-events: none;
+}
+
+
+/* Header */
+
+.menu-button {
+	position: fixed;
+	right: 2em;
+}
+
+.codrops-header {
+	padding: 2em;
+	text-align: center;
+}
+
+.codrops-header h1 {
+	font-size: 2.5em;
+	line-height: 1;
+	font-weight: normal;
+}
+
+.codrops-header h1 span {
+	display: block;
+	padding: 1em;
+	color: #999;
+	font-weight: normal;
+	font-size: 0.38em;
+	letter-spacing: 0;
+}
+
+/* Demo links */
+
+.codrops-demos {
+	margin: 2em 0 0;
+}
+
+.codrops-demos a {
+	display: inline-block;
+	margin: 0 0.5em;
+}
+
+.codrops-demos a.current-demo {
+	color: #555555;
+}
+
+
+/* Content */
+
+.content {
+	padding: 1em 0 3em;
+	max-width: 1080px;
+	margin: 0 auto;
+}
+
+/* Demo ad style */
+
+@media screen and (max-width: 50em) {
+	.codrops-header {
+		padding: 2em 5%;
+	}
+}
+
+@media screen and (max-width: 40em) {
+	.codrops-header h1 {
+		font-size: 2.15em;
+	}
+}
