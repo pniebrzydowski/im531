@@ -1,0 +1,27 @@
+<h1>Your Decks</h1>
+
+<login-buttons></login-buttons>
+
+<table>
+	<thead>
+		<tr>
+			<th>Deck Name</th>
+			
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="#deck of decks">
+			<td>{{deck.name}}</td>
+			
+			<td>
+				<a [routerLink]="['/WordList', {deckId: deck._id}]">Edit Deck</a>
+				<a [routerLink]="['/ReviewWords', {deckId: deck._id}]">Review Deck</a>
+			</td>
+			<td><button (click)="removeDeck(deck)">X</button></td>
+		</tr>
+	</tbody>
+</table>
+
+<hr>
+<add-deck-form></add-deck-form>

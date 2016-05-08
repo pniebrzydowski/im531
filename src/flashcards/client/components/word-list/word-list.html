@@ -1,0 +1,22 @@
+<h1>Deck #{{deckId}} - Edit</h1>
+<table>
+	<thead>
+		<tr>
+			<th>Word</th>
+			<th>Current Score</th>
+			<th>Remove Word</th>
+	</thead>
+	<tbody>
+		<tr *ngFor="#word of words">
+			<td>{{word.name}}</td>
+			<td>{{word.score}}</td>
+		<!-- 	<td>{{word.creator}}</td>
+			<td>{{word.deckid}}</td> -->
+			<td><button (click)="removeWord(word)">X</button></td>
+		</tr>
+	</tbody>
+</table>
+
+<hr>
+
+<add-word-form></add-word-form>

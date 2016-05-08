@@ -1,0 +1,5 @@
+<form [ngFormModel]="addDeckForm" #f="ngForm" (submit)="addDeck(f.value)">
+  <label>Deck</label>
+  <input type="text" ngControl="name" />
+  <button>Add</button>
+</form>
