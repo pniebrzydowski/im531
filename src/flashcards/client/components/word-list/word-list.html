@@ -10,6 +10,8 @@
 		<tr *ngFor="#word of words">
 			<td>{{word.name}}</td>
 			<td>{{word.score}}</td>
+		<!-- 	<td>{{word.creator}}</td>
+			<td>{{word.deckid}}</td> -->
 			<td><button (click)="removeWord(word)">X</button></td>
 		</tr>
 	</tbody>

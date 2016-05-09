@@ -17,7 +17,8 @@ export class WordList {
 	words: Mongo.Cursor<Object>;
   
 	constructor (params: RouteParams) {
-    	this.words = Words.find();
+    	this.words = Words.find( { $and: [ { creator:  Meteor.userId()  }, { deckid: params.get('deckId')  } ] } );
+
     	this.deckId = params.get('deckId');
 	}
   

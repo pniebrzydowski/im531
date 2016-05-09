@@ -19,7 +19,8 @@ export class ReviewWords {
 
 	constructor (params: RouteParams) {
 		this.deckId = params.get('deckId');
-    	this.wordsCursor = Words.find();
+    	this.wordsCursor = Words.find( { $and: [ { creator:  Meteor.userId()  }, { deckid: params.get('deckId')  } ] } );
+    	
 		this.words = this.wordsCursor.fetch();
 		this.setCurrentWord(0);
 	}
@@ -37,7 +38,11 @@ export class ReviewWords {
 	}
   
 	updateWord(word) {
-		Words.update({_id : word._id}, word);
+	Words.update({_id : word._id}, {
+	$set: {
+		score: word.score
+	}
+	});
 	}
 
 	moveToNextWord() {
