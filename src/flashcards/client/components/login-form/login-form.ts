@@ -6,7 +6,6 @@ import {Mongo} from 'meteor/mongo';
 @Component({
   selector: 'login-form',
   styleUrls: [
-  	'/client/components/login-form/normalize.css',
   	'/client/components/login-form/style.css'],
   templateUrl: '/client/components/login-form/login-form.html'
 })

@@ -1,27 +1,56 @@
-<h1>Your Decks</h1>
-
 <login-buttons></login-buttons>
 
-<table>
-	<thead>
-		<tr>
-			<th>Deck Name</th>
-			
-			<th></th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr *ngFor="#deck of decks">
-			<td>{{deck.name}}</td>
-			
-			<td>
-				<a [routerLink]="['/WordList', {deckId: deck._id}]">Edit Deck</a>
-				<a [routerLink]="['/ReviewWords', {deckId: deck._id}]">Review Deck</a>
-			</td>
-			<td><button (click)="removeDeck(deck)">X</button></td>
-		</tr>
-	</tbody>
-</table>
+<div class="container">
+	<header class="codrops-header">
+	
+		<p><button id="trigger-overlay" class="menu-button" type="button">Menu</button></p>
+		
+		<nav class="codrops-demos">
+			<a class="current-demo" href="#">Home</a>
+			<a href="#">Library</a>
+		</nav>
+		<h1>My Decks <span>From here you can find all the decks you have either created yourself or saved from
+		the public decks</span></h1>
+	</header>
+	
+	<div class="content">
+		<div class="grid">
+			<div class="grid__item" data-size="700x800" *ngFor="#deck of decks">
+				<a href="img/collage/6.jpg" class="img-wrap"><img src="img/collage/thumbs/6.jpg" alt="img06" />
+					<div class="description description--grid">
+						<h3>{{deck.name}}</h3>
+						<p>{{deck.description}}</p>
+					</div>
+				</a>
+			</div>
+		</div>
+		
+		<!-- Play Menu 
+		<div class="preview">
+			<button class="action action--close"><span class="text-hidden">Close</span></button>
+			<div class="description description--preview">
+			</div>
+			<div class="collage">
+				<img src="img/collage/dummies/1.jpg" alt="img01" />
+				<img src="img/collage/dummies/2.jpg" alt="img02" />
+				<img src="img/collage/dummies/3.jpg" alt="img03" />
+				<img src="img/collage/dummies/4.jpg" alt="img04" />
+			</div>
+			<button class="button button--view">Play the Deck</button>
+		</div> -->
+		<!-- /preview -->
+	</div>
+	<!-- /content -->
+</div>
+<!-- /container -->
+
+
+<!-- 
+<td>{{deck.name}}</td>			
+<a [routerLink]="['/WordList', {deckId: deck._id}]">Edit Deck</a>
+<a [routerLink]="['/ReviewWords', {deckId: deck._id}]">Review Deck</a>
+<td><button (click)="removeDeck(deck)">X</button></td>
+-->
 
 <hr>
 <add-deck-form></add-deck-form>

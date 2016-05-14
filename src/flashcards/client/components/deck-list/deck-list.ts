@@ -12,6 +12,8 @@ import {Decks} from '../../../collections/decks.ts';
 @Component({
 	selector: 'deck-list',
 	templateUrl: '/client/components/deck-list/deck-list.html',
+	styleUrls: [
+  		'/client/components/deck-list/style.css'],
 	directives: [RouterLink, LoginButtons, AddDeckForm]
 })
 
@@ -21,14 +23,9 @@ export class DeckList {
 
 	constructor () {
 		this.decks = Decks.find({ creator: Meteor.userId() });
-		
-		//TODO add number of words in each deck
-	//	this.decks = [
-	//		{_id:1,name:Decks.name,wordCount:3}
-	//	];
 	}
 
 	removeDeck(deck) {
-	Decks.remove(deck._id);
+		Decks.remove(deck._id);
 	}
 }

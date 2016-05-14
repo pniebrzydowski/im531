@@ -17,7 +17,8 @@ export class AddDeckForm {
     let fb = new FormBuilder();
  
     this.addDeckForm = fb.group({
-      name: ['',Validators.required]
+      name: ['',Validators.required],
+      description: ['',Validators.required]
     });
   }
   
@@ -25,10 +26,12 @@ export class AddDeckForm {
     if (this.addDeckForm.valid) {
       Decks.insert({
         name: deck.name,
+        description: deck.description,
         creator: Meteor.userId()
       });
  
       (<Control>this.addDeckForm.controls['name']).updateValue('');
+      (<Control>this.addDeckForm.controls['description']).updateValue('');
     }
   }
 }
