@@ -1,0 +1,13 @@
+*, *:before, *:after {
+  	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+	overflow-y: scroll;
+	height: 100%;
+}
+
+body {
+	height: 100%;
+}
