@@ -5,52 +5,60 @@
 	
 		<p><button id="trigger-overlay" class="menu-button" type="button">Menu</button></p>
 		
-		<nav class="codrops-demos">
+		<!-- <nav class="codrops-demos">
 			<a class="current-demo" href="#">Home</a>
 			<a href="#">Library</a>
-		</nav>
+		</nav> -->
 		<h1>My Decks <span>From here you can find all the decks you have either created yourself or saved from
 		the public decks</span></h1>
 	</header>
 	
 	<div class="content">
-		<div class="grid">
+		<div class="grid clearfix">
 			<div class="grid__item" data-size="700x800" *ngFor="#deck of decks">
-				<a href="img/collage/6.jpg" class="img-wrap"><img src="img/collage/thumbs/6.jpg" alt="img06" />
+				<div (click)="preview(deck)" class="img-wrap">
+					<img src="/img/sample.jpg" alt="sample img" />
 					<div class="description description--grid">
 						<h3>{{deck.name}}</h3>
 						<p>{{deck.description}}</p>
 					</div>
-				</a>
+				</div>
 			</div>
 		</div>
 		
-		<!-- Play Menu 
-		<div class="preview">
-			<button class="action action--close"><span class="text-hidden">Close</span></button>
+		<!-- Play Menu -->
+		<div class="preview" 
+			[ngClass] = "{'preview--open': previewDeck != false,
+						 'preview--image-loaded': previewDeck != false}">
+			<button (click)="closePreview()" class="action action--close">
+				<span class="text-hidden">Close</span>
+			</button>
+			
+			<p class="button--view">
+				<a [routerLink]="['/WordList', {deckId: previewDeck._id}]"
+					class="button">Edit</a>
+				<a [routerLink]="['/ReviewWords', {deckId: previewDeck._id}]"
+					class="button">Play the Deck</a>
+				<button (click)="remove(previewDeck)"
+					class="button">Delete</button>
+			</p>
+
 			<div class="description description--preview">
+				<h3>{{previewDeck.name}}</h3>
+				<p>{{previewDeck.description}}</p>	
 			</div>
-			<div class="collage">
+			<!--<div class="collage">
 				<img src="img/collage/dummies/1.jpg" alt="img01" />
 				<img src="img/collage/dummies/2.jpg" alt="img02" />
 				<img src="img/collage/dummies/3.jpg" alt="img03" />
 				<img src="img/collage/dummies/4.jpg" alt="img04" />
-			</div>
-			<button class="button button--view">Play the Deck</button>
-		</div> -->
+			</div>-->
+		</div>
 		<!-- /preview -->
 	</div>
 	<!-- /content -->
 </div>
 <!-- /container -->
-
-
-<!-- 
-<td>{{deck.name}}</td>			
-<a [routerLink]="['/WordList', {deckId: deck._id}]">Edit Deck</a>
-<a [routerLink]="['/ReviewWords', {deckId: deck._id}]">Review Deck</a>
-<td><button (click)="removeDeck(deck)">X</button></td>
--->
 
 <hr>
 <add-deck-form></add-deck-form>

@@ -5,16 +5,6 @@ deck-list {
 	font-family: "Avenir Next", Avenir, 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
 }
 
-deck-list .clearfix:before,
-deck-list .clearfix:after {
-	display: table;
-	content: '';
-}
-
-deck-list .clearfix:after {
-	clear: both;
-}
-
 deck-list a {
 	color: #777777;
 	text-decoration: none;

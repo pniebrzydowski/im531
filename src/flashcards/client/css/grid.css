@@ -26,6 +26,7 @@
 	padding: 20px;
 	background: no-repeat center center;
 	background-size: 100%;
+	float: left;
 }
 
 .grid__item--current {
@@ -33,6 +34,7 @@
 }
 
 .img-wrap {
+	cursor: pointer;
 	display: block;
 }
 
@@ -125,10 +127,10 @@
 
 .description {
 	color: #fff;
-	overflow-y: scroll;
+	overflow-y: auto;
 }
 
-.js .description--grid {
+.description--grid {
 	display: none;
 }
 

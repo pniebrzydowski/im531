@@ -20,12 +20,25 @@ import {Decks} from '../../../collections/decks.ts';
 
 export class DeckList {
 	decks: Mongo.Cursor<Object>;
+	previewDeck;
 
 	constructor () {
 		this.decks = Decks.find({ creator: Meteor.userId() });
+		this.previewDeck = false;
+	}
+	
+	preview(deck) {
+		this.previewDeck = deck;
+	}
+	
+	closePreview() {
+		this.previewDeck = false;
 	}
 
-	removeDeck(deck) {
-		Decks.remove(deck._id);
+	remove(deck) {
+		if( confirm("Are you sure you want to delete this deck?") ) {
+			Decks.remove(deck._id);
+			this.closePreview();
+		}
 	}
 }

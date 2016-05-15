@@ -3,6 +3,16 @@
 	box-sizing: border-box;
 }
 
+.clearfix:before,
+.clearfix:after {
+	display: table;
+	content: '';
+}
+
+.clearfix:after {
+	clear: both;
+}
+
 html {
 	overflow-y: scroll;
 	height: 100%;
