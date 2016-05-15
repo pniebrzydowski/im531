@@ -1,6 +1,7 @@
 .grid {
 	position: relative;
 	margin: 0 auto;
+	text-align: center;
 }
 
 .js .grid::after {
@@ -26,7 +27,7 @@
 	padding: 20px;
 	background: no-repeat center center;
 	background-size: 100%;
-	float: left;
+	display: inline-block;
 }
 
 .grid__item--current {
