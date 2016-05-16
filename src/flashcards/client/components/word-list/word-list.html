@@ -2,13 +2,15 @@
 <table>
 	<thead>
 		<tr>
-			<th>Word</th>
+			<th>Front</th>
+			<th>Back</th>
 			<th>Current Score</th>
 			<th>Remove Word</th>
 	</thead>
 	<tbody>
 		<tr *ngFor="#word of words">
-			<td>{{word.name}}</td>
+			<td>{{word.front}}</td>
+			<td>{{word.back}}</td>
 			<td>{{word.score}}</td>
 		<!-- 	<td>{{word.creator}}</td>
 			<td>{{word.deckid}}</td> -->
