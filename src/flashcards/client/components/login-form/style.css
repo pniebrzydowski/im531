@@ -1,12 +1,3 @@
-*, *:before, *:after {
-  box-sizing: border-box;
-}
-
-html {
-	overflow-y: scroll;
-	height: 100%;
-}
-
 login-form {
 	/* Background image */
 	background-color: #98beae;
@@ -17,27 +8,23 @@ login-form {
 	background-size: cover;
 	display: block;
 	height: 100%;
+	font-family: 'Gadugi', sans-serif;
+	font-size: 14px;
 	position: relative;
 	width: 100%;
 }
 
-body {
-	font-family: 'Gadugi', sans-serif;
-	font-size: 14px;
-	height: 100%;
-}
-
-.forgot a {
+login-form .forgot a {
 	text-decoration: none;
 	color: #ffffff;
 	-webkit-transition: .5s ease;
 	transition: .5s ease;
 }
-.forgot a:hover {
+login-form .forgot a:hover {
 	color: #1fff6a;
 }
 
-.form {
+login-form .form {
 	background: rgba(183, 220, 208, 0.1);
 	padding: 40px;
 	max-width: 550px;
@@ -45,25 +32,25 @@ body {
 	margin: 0 auto;
 }
 
-.anki-logo {
+login-form .anki-logo {
 	text-align: center;
 	padding-bottom: 30px;
 }
 
 /* Switch buttons */
-.tab-group {
+login-form .tab-group {
 	list-style: none;
 	padding: 0;
 	margin: 0 0 20px 0;
 	border: 1px solid #efefef;
 	border-radius: 5px;
 }
-.tab-group:after {
+login-form .tab-group:after {
 	content: "";
 	display: table;
 	clear: both;
 }
-.tab-group li a {
+login-form .tab-group li a {
 	display: block;
 	text-decoration: none;
 	padding: 15px;
@@ -78,21 +65,21 @@ body {
 	transition: 0.5s ease;
 }
 
-.tab-group #tab-login a {
+login-form .tab-group #tab-login a {
 	border-top-left-radius: 5px;
 	border-bottom-left-radius: 5px;
 }
 
-.tab-group #tab-signup a {
+login-form .tab-group #tab-signup a {
 	border-top-right-radius: 5px;
 	border-bottom-right-radius: 5px;
 }
 
-.tab-group li a:hover {
+login-form .tab-group li a:hover {
 	background: #ffffff;
 	color: #999999;
 }
-.tab-group .active a {
+login-form .tab-group .active a {
 	background: #efefef;
 	color: #999999;
 }
@@ -106,7 +93,7 @@ login-form h1 {
 	margin: 0 0 20px;
 }
 
-label {
+login-form label {
 	position: absolute;
 	left: 13px;
 	color: #ffffff;
@@ -120,7 +107,7 @@ label {
 	-webkit-transform: translateY(11px);
     transform: translateY(11px);
 }
-label .req {
+login-form label .req {
 	margin-left: 5px;
 	color: #1fff6a;
 	font-weight: bold;
@@ -131,13 +118,14 @@ label .req {
 	*/
 }
 
-label.active  {
+login-form label.active  {
 	opacity: 0;
 	-webkit-transform: translateY(50px);
 	transform: translateY(50px);
 }
 
-input, textarea {
+login-form input, 
+login-form textarea {
 	font-size: 14px;
 	display: block;
 	width: 100%;
@@ -151,36 +139,37 @@ input, textarea {
 	-webkit-transition: border-color .25s ease, box-shadow .25s ease;
 	transition: border-color .25s ease, box-shadow .25s ease;
 }
-input:focus, textarea:focus {
+login-form input:focus,
+login-form textarea:focus {
 	outline: 0;
 	border-color: #1fff6a;
 }
 
-textarea {
+login-form textarea {
 	border: 2px solid #ffffff;
 	resize: vertical;
 }
 
-.field-wrap {
+login-form .field-wrap {
 	position: relative;
 	margin-bottom: 20px;
 }
 
-.top-row:after {
+login-form .top-row:after {
 	content: "";
 	display: table;
 	clear: both;
 }
-.top-row > div {
+login-form .top-row > div {
 	float: left;
 	width: 48%;
 	margin-right: 4%;
 }
-.top-row > div:last-child {
+login-form .top-row > div:last-child {
 	margin: 0;
 }
 
-.button {
+login-form .button {
 	border: 0;
 	outline: none;
 	border-radius: 5px;
@@ -195,42 +184,44 @@ textarea {
 	transition: all 0.5s ease;
 	-webkit-appearance: none;
 }
-.button:hover, .button:focus {
+login-form .button:hover,
+login-form .button:focus {
 	background: #ffffff;
 }
 
-.button-block {
+login-form .button-block {
 	display: block;
 	width: 100%;
 }
 
-.forgot {
+login-form .forgot {
 	margin-top: -15px;
 	text-align: right;
 }
 
 /* Media Queries */
 @media only screen and (max-width : 450px) {
-	.anki-logo {
+	login-form .anki-logo {
 		padding-bottom: 20px;
 	}
-	.form {
+	login-form .form {
 		padding: 30px 15px;
 		height: auto;
 	}
-	h1 {
+	login-form h1 {
 		display: none;
 	}
-	.forgot {
+	login-form .forgot {
 		margin-top: -5px;
 		text-align: center;
 	}
-	input, textarea {
+	login-form input,
+	login-form textarea {
 		/*background: rgba(0, 0, 0, 0.15);*/
 		background: rgba(183, 220, 208, 0.3);
 		color: #ffffff;
 	}
-	.button {
+	login-form .button {
 		margin-bottom: 0;
 	}
 }

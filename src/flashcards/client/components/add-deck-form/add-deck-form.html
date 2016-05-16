@@ -1,5 +1,11 @@
+<header class="codrops-header">
+	<h1>Add New Deck</h1>
+</header>
+
 <form [ngFormModel]="addDeckForm" #f="ngForm" (submit)="addDeck(f.value)">
   <label>Deck</label>
   <input type="text" ngControl="name" />
+  <label>Description</label>
+  <input type="text" ngControl="description" />
   <button>Add</button>
 </form>

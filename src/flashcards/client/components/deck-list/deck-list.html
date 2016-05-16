@@ -1,27 +1,68 @@
-<h1>Your Decks</h1>
-
 <login-buttons></login-buttons>
+<!-- <p>
+	<button id="trigger-overlay" class="menu-button" type="button">
+		Menu
+	</button>
+</p> -->
 
-<table>
-	<thead>
-		<tr>
-			<th>Deck Name</th>
+<div class="container">
+	<header class="codrops-header">		
+		<!-- <nav class="codrops-demos">
+			<a class="current-demo" href="#">Home</a>
+			<a href="#">Library</a>
+		</nav> -->
+		<h1>My Decks</h1>
+		<h2>From here you can find all the decks you have either created yourself or saved from
+		the public decks</h2>
+	</header>
+	
+	<div class="content">
+		<div class="grid clearfix">
+			<div class="grid__item" data-size="700x800" *ngFor="#deck of decks">
+				<div (click)="preview(deck)" class="img-wrap">
+					<img src="/img/sample.jpg" alt="sample img" />
+					<div class="description description--grid">
+						<h3>{{deck.name}}</h3>
+						<p>{{deck.description}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Play Menu -->
+		<div class="preview" 
+			[ngClass] = "{'preview--open': previewDeck != false,
+						 'preview--image-loaded': previewDeck != false}">
+			<button (click)="closePreview()" class="action action--close">
+				<span class="text-hidden">Close</span>
+			</button>
 			
-			<th></th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr *ngFor="#deck of decks">
-			<td>{{deck.name}}</td>
-			
-			<td>
-				<a [routerLink]="['/WordList', {deckId: deck._id}]">Edit Deck</a>
-				<a [routerLink]="['/ReviewWords', {deckId: deck._id}]">Review Deck</a>
-			</td>
-			<td><button (click)="removeDeck(deck)">X</button></td>
-		</tr>
-	</tbody>
-</table>
+			<p class="button--view">
+				<a [routerLink]="['/WordList', {deckId: previewDeck._id}]"
+					class="button">Edit</a>
+				<a [routerLink]="['/ReviewWords', {deckId: previewDeck._id}]"
+					class="button">Play the Deck</a>
+				<button (click)="remove(previewDeck)"
+					class="button">Delete</button>
+			</p>
+
+			<div class="description description--preview">
+				<h3>{{previewDeck.name}}</h3>
+				<p>{{previewDeck.description}}</p>	
+			</div>
+			<!--<div class="collage">
+				<img src="img/collage/dummies/1.jpg" alt="img01" />
+				<img src="img/collage/dummies/2.jpg" alt="img02" />
+				<img src="img/collage/dummies/3.jpg" alt="img03" />
+				<img src="img/collage/dummies/4.jpg" alt="img04" />
+			</div>-->
+		</div>
+		<!-- /preview -->
+	</div>
+	<!-- /content -->
+</div>
+<!-- /container -->
 
 <hr>
+
 <add-deck-form></add-deck-form>
