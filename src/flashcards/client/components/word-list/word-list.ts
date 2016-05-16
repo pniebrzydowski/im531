@@ -2,6 +2,7 @@ import 'reflect-metadata';
 import 'zone.js/dist/zone';
 import {Component} from 'angular2/core';
 import {RouteParams} from 'angular2/router';
+import {Meteor} from 'meteor/meteor';
 import {Mongo} from 'meteor/mongo';
 import {AddWordForm} from '../add-word-form/add-word-form';
 import {Words} from '../../../collections/words';

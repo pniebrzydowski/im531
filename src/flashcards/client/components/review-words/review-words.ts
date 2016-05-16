@@ -20,7 +20,7 @@ export class ReviewWords {
 	showResults;
 	currentWord;
 	currentWordIndex;
-	words: Meteor.Cursor<Object>;
+	words: Array<Object>;
 
 	constructor (params: RouteParams) {
 		this.words = Words.find( { $and: [ { creator:  Meteor.userId()  }, { deckid: params.get('deckId')  } ] } ).fetch();

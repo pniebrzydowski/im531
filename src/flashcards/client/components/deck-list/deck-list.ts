@@ -1,10 +1,11 @@
 import 'reflect-metadata';
 import 'zone.js/dist/zone';
+import {Meteor} from 'meteor/meteor';
+import {Mongo} from 'meteor/mongo';
 import {Component} from 'angular2/core';
 import {RouterLink} from 'angular2/router';
 import {LoginButtons} from 'angular2-meteor-accounts-ui/login-buttons';
 import {AddDeckForm} from '../add-deck-form/add-deck-form';
-import {Mongo} from 'meteor/mongo';
 import {Decks} from '../../../collections/decks.ts';
 
 //import {Words} from '../../../collections/decks.ts';
