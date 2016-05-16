@@ -21,6 +21,7 @@ export class ReviewWords {
 	currentWord;
 	currentWordIndex;
 	words: Array<Object>;
+	results;
 
 	constructor (params: RouteParams) {
 		this.words = Words.find( { $and: [ { creator:  Meteor.userId()  }, { deckid: params.get('deckId')  } ] } ).fetch();
@@ -30,17 +31,24 @@ export class ReviewWords {
 		this.currentWordIndex = -1;
 		this.moveToNextWord();
 		this.showFront = true;
+		this.results = {
+			total: this.words.length,
+			right: 0,
+			wrong: 0
+		};
 	}	
 
 	increaseScore() {
     	this.currentWord.score += 5;
     	this.updateWord(this.currentWord);
+    	this.results.right++;
     	this.moveToNextWord();
 	}
   
 	decreaseScore() {
 		this.currentWord.score -= 5;
 		this.updateWord(this.currentWord);
+		this.results.wrong++;
 		this.moveToNextWord();
 	}
   
