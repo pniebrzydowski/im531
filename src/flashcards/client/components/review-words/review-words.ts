@@ -20,6 +20,7 @@ export class ReviewWords {
 	showResults;
 	currentWord;
 	currentWordIndex;
+	results;
 	words: Meteor.Cursor<Object>;
 
 	constructor (params: RouteParams) {
@@ -30,17 +31,24 @@ export class ReviewWords {
 		this.currentWordIndex = -1;
 		this.moveToNextWord();
 		this.showFront = true;
+		this.results = {
+			total: this.words.length,
+			right: 0,
+			wrong: 0
+		};
 	}	
 
 	increaseScore() {
     	this.currentWord.score += 5;
     	this.updateWord(this.currentWord);
+    	this.results.right++;
     	this.moveToNextWord();
 	}
   
 	decreaseScore() {
 		this.currentWord.score -= 5;
 		this.updateWord(this.currentWord);
+		this.results.wrong++;
 		this.moveToNextWord();
 	}
   
