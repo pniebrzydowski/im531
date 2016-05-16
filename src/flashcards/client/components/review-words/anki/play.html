@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>fullPage.js A simple Demo</title>
+	<meta name="author" content="Alvaro Trigo Lopez" />
+	<meta name="description" content="fullPage very simple demo." />
+	<meta name="keywords"  content="fullpage,jquery,demo,simple" />
+	<meta name="Resource-type" content="Document" />
+
+
+	<link rel="stylesheet" type="text/css" href="../jquery.fullPage.css" />
+	<link rel="stylesheet" type="text/css" href="styles.css" />
+
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+	<script type="text/javascript" src="../jquery.fullPage.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				sectionsColor: ['#E8E8E8', '#E8E8E8', '#E8E8E8', '#E8E8E8', '#E8E8E8']
+			});
+
+			$.fn.fullpage.setKeyboardScrolling(false);
+			$.fn.fullpage.setAllowScrolling(false);
+
+			$('#answerButton').click(function(e){
+				e.preventDefault();
+				$('#front').fadeOut('fast', function(){
+					$('#back').fadeIn('fast');
+				});
+			});
+
+			$(document).on('click', '.moveRight', function(){
+				$.fn.fullpage.moveSlideRight();
+			});
+		});
+	</script>
+
+</head>
+<body>
+
+<div id="fullpage">
+	<div class="section" id="section1">
+		<a href="http://www.google.com">
+			<img class="close" src="x.png">
+		</a>
+	    <div class="slide">
+				<div id="front">
+					<h1>What is the capital of Finland?</h1>
+					<div class="buttons">
+						<button type="button" id="answerButton">Show</button>
+						<button type="button" class="moveRight" id="skipButton">Skip</button>
+					</div>
+				</div>
+
+				<div id="back" style="display: none">
+					<h1>Helsinki</h1>
+					<div class="buttons">
+						<button type="button" class="moveRight" id="wrongButton">Wrong</button>
+						<button type="button" class="moveRight" id="rightButton">Right</button>
+					</div>
+				</div>
+		</div>
+
+	    <div class="slide">
+			<div id="front">
+				<h1>What is the capital of Finland?</h1>
+				<div class="buttons">
+					<button type="button" id="answerButton">Show</button>
+					<button type="button" class="moveRight" id="skipButton">Skip</button>
+				</div>
+			</div>
+
+			<div id="back" style="display: none">
+				<h1>Helsinki</h1>
+				<div class="buttons">
+					<button type="button" class="moveRight" id="wrongButton">Wrong</button>
+					<button type="button" class="moveRight" id="rightButton">Right</button>
+				</div>
+			</div>
+		</div>
+
+	    <div class="slide">
+
+		</div>
+	</div>
+
+	<div class="section" id="section2">
+		<a href="http://www.google.com">
+			<img class="close" src="x.png">
+		</a>
+		<h1>Your Results</h1>
+	</div>
+</div>
+
+</body>
+</html>
