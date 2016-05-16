@@ -23,7 +23,7 @@
 
 .grid__item {
 	width: 190px;
-	padding: 20px;
+	padding: 12px;
 	background: no-repeat center center;
 	background-size: 100%;
 }
@@ -46,8 +46,7 @@
 	max-width: 100%;
 }
 
-/* Play Menu */
-
+/***** Game Menu *****/
 .preview {
 	position: fixed;
 	z-index: 1000;
@@ -169,8 +168,7 @@
 }
 
 
-/* Close button */
-
+/***** Close button *****/
 .action {
 	font-size: 1.5em;
 	margin: 0;
@@ -189,7 +187,8 @@
 }
 
 .action--close {
-	background: url(../img/cross.png) no-repeat center center;
+	background: url(img/close-icon.png) no-repeat center center;
+	background-size: 50px 50px;
 	position: fixed;
 	z-index: 150;
 	top: 0;

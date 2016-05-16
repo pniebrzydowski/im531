@@ -15,6 +15,16 @@
 	clear: both;
 }
 
+/***** Invisible scrollbar *****/
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+
 body {
 	font-family: "Avenir Next", Avenir, 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
 	color: #212121;
@@ -25,15 +35,7 @@ body {
 }
 
 a {
-	color: #777777;
 	text-decoration: none;
-}
-
-a:hover,
-a:focus {
-	color: #555555;
-	-webkit-transition: 0.4s ease;
-	transition: 0.4s ease;
 }
 
 button:focus {
@@ -48,47 +50,98 @@ button:focus {
 	pointer-events: none;
 }
 
+/***** Header *****/
 
-/* Header */
+.header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 66px;
+  line-height: 66px;
+  color: #fff;
+  background-color: #ddd;
+  z-index: 1;
+}
+
+.menu-icon {
+	
+}
+
+.header-logo {
+  font-weight: 700;
+  padding: 0 25px;
+  float: left;
+}
+
+/***** Navigation Bar *****/
+.navbar {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.navbar ul {
+	list-style-type: none;
+	overflow: hidden;
+	background: #ddd;
+	position: fixed;
+	width: 100%;
+}
+.navbar ul li {
+	float: left;
+	width: 25%;
+}
+.xxx {
+	float: right;
+}
+.navbar ul li a {
+	display: block;
+	padding: 1em;
+	color: #777777;
+    text-align: center;
+    text-decoration: none;
+}
+
+.navbar a.current-demo {
+	color: #555555;
+}
+
+.navbar a:hover,
+.navbar a:focus {
+	color: #555555;
+	-webkit-transition: 0.4s ease;
+	transition: 0.4s ease;
+}
 
 .menu-button {
-	position: fixed;
-	right: 2em;
+	float: right;
+	border: none;
+	background: none;
 }
 
-.codrops-header {
+.menu-button img {
+	width: 50px;
+}
+
+/***** Header *****/
+.info {
 	padding: 2em;
-	text-align: center;
+	text-align: left;
 }
 
-.codrops-header h1 {
+.info h1 {
 	font-size: 2.5em;
 	line-height: 1;
 	font-weight: normal;
 }
 
-.codrops-header h1 span {
+.info h1 span {
 	display: block;
 	padding: 1em;
 	color: #999;
 	font-weight: normal;
 	font-size: 0.38em;
 	letter-spacing: 0;
-}
-
-/* Demo links */
-
-.codrops-demos {
-	margin: 2em 0 0;
-}
-
-.codrops-demos a {
-	display: inline-block;
-	margin: 0 0.5em;
-}
-
-.codrops-demos a.current-demo {
-	color: #555555;
 }
 
 

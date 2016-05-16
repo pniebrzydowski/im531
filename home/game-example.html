@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Anki - Play Mood</title>
+	<link rel="icon" type="image/png" href="img/favicon-black-32x32.png" sizes="32x32">
+
+	<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
+	<link rel="stylesheet" type="text/css" href="css/game-styles.css" />
+
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+	<script type="text/javascript" src="js/jquery.fullPage.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				sectionsColor: ['#E8E8E8', '#E8E8E8', '#E8E8E8', '#E8E8E8', '#E8E8E8']
+			});
+
+			$.fn.fullpage.setKeyboardScrolling(false);
+			$.fn.fullpage.setAllowScrolling(false);
+
+			$('#answerButton').click(function(e){
+				e.preventDefault();
+				$('#front').fadeOut('fast', function(){
+					$('#back').fadeIn('fast');
+				});
+			});
+
+			$(document).on('click', '.moveRight', function(){
+				$.fn.fullpage.moveSlideRight();
+			});
+		});
+	</script>
+
+</head>
+<body>
+
+<div id="fullpage">
+	<div class="section" id="section1">
+		<a href="index.html">
+			<img class="close" src="img/close-icon.png">
+		</a>
+	    <div class="slide">
+				<div id="front">
+					<h1>What is the capital of Finland?</h1>
+					<div class="buttons">
+						<button type="button" id="answerButton">Show</button>
+						<button type="button" class="moveRight" id="skipButton">Skip</button>
+					</div>
+				</div>
+
+				<div id="back" style="display: none">
+					<h1>Helsinki</h1>
+					<div class="buttons">
+						<button type="button" class="moveRight" id="wrongButton">Wrong</button>
+						<button type="button" class="moveRight" id="rightButton">Right</button>
+					</div>
+				</div>
+		</div>
+
+	    <div class="slide">
+			<div id="front">
+				<h1>What is the capital of Finland?</h1>
+				<div class="buttons">
+					<button type="button" id="answerButton">Show</button>
+					<button type="button" class="moveRight" id="skipButton">Skip</button>
+				</div>
+			</div>
+
+			<div id="back" style="display: none">
+				<h1>Helsinki</h1>
+				<div class="buttons">
+					<button type="button" class="moveRight" id="wrongButton">Wrong</button>
+					<button type="button" class="moveRight" id="rightButton">Right</button>
+				</div>
+			</div>
+		</div>
+
+	    <div class="slide">
+
+		</div>
+	</div>
+
+	<div class="section" id="section2">
+		<a href="index.html">
+			<img class="close" src="img/cross-02.png">
+		</a>
+		<h1>Your Results</h1>
+	</div>
+</div>
+
+</body>
+</html>

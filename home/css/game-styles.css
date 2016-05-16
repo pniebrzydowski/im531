@@ -1,0 +1,175 @@
+@CHARSET "ISO-8859-1";
+/* Reset CSS
+ * --------------------------------------- */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,
+form,fieldset,input,textarea,p,blockquote,th,td {
+    padding: 0;
+    margin: 0;
+}
+a{
+	text-decoration:none;
+}
+table {
+    border-spacing: 0;
+}
+fieldset,img {
+    border: 0;
+}
+address,caption,cite,code,dfn,em,strong,th,var {
+    font-weight: normal;
+    font-style: normal;
+}
+strong{
+	font-weight: bold;
+}
+ol,ul {
+    list-style: none;
+    margin:0;
+    padding:0;
+}
+caption,th {
+    text-align: left;
+
+}
+h1,h2,h3,h4,h5,h6 {
+    font-weight: normal;
+    font-size: 100%;
+    margin:0;
+    padding:0;
+    color:#444;
+}
+q:before,q:after {
+    content:'';
+}
+abbr,acronym { border: 0;
+}
+
+
+/* Custom CSS
+ * --------------------------------------- */
+body{
+	font-family: arial,helvetica;
+	color: #333;
+	color: rgba(0,0,0,0.5);
+}
+.wrap{
+	margin-left: auto;
+	margin-right: auto;
+	width: 960px;
+	position: relative;
+}
+h1{
+	font-size: 1.5em;
+	margin: auto;
+}
+p{
+	font-size: 2em;
+}
+.intro p{
+	width: 50%;
+	margin: 0 auto;
+	font-size: 1.5em;
+}
+.section{
+	text-align:center;
+}
+
+div.fp-controlArrow.fp-prev {
+	display: none;
+}
+
+div.fp-controlArrow.fp-next {
+	display: none;
+}
+
+#front, #back {
+	background-color: transparent;
+	width: 40%;
+	height: 18em;
+	margin: auto;
+	padding: 1em;
+}
+
+.buttons {
+	margin-top: 10em;
+}
+
+#skipButton {
+	color: #4CAF50;
+	width: 10em;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+
+	font-size: 16px;
+
+	background: rgba(0,0,0,0);
+	border: solid 2px #4CAF50;
+}
+
+#skipButton:hover {
+	background-color: #4CAF50;
+	color: #ffffff;
+}
+
+#answerButton {
+	color: #808080;
+	width: 10em;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 16px;
+
+	background: rgba(0,0,0,0);
+	border: solid 2px #808080;
+}
+
+#answerButton:hover {
+	background-color: #808080;
+	color: #ffffff;
+}
+
+#wrongButton {
+	color: #808080;
+	width: 10em;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+
+	background: rgba(0,0,0,0);
+	border: solid 2px #808080;
+}
+
+#wrongButton:hover {
+	background-color: #808080;
+	color: #ffffff;
+}
+
+#rightButton {
+	color: #4CAF50;
+	width: 10em;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+
+	background: rgba(0,0,0,0);
+	border: solid 2px #4CAF50;
+}
+
+#rightButton:hover {
+	background-color: #4CAF50;
+	color: #ffffff;
+}
+
+.close {
+	width: 2em;
+	float: right;
+	margin-top: 1em;
+	margin-right: 1em;
+
+}
+
