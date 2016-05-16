@@ -18,7 +18,8 @@ export class AddWordForm {
     let fb = new FormBuilder();
  
     this.addWordForm = fb.group({
-      name: ['',Validators.required],
+      front: ['',Validators.required],
+      back: ['',Validators.required],
       deckId: params.get('deckId')
     });
   }
@@ -26,13 +27,15 @@ export class AddWordForm {
   addWord(word) {
     if (this.addWordForm.valid) {
       Words.insert({
-        name: word.name,
+        front: word.front,
+        back: word.back,
         score: 0,
         creator: Meteor.userId(),
         deckid: word.deckId
       });
  
-      (<Control>this.addWordForm.controls['name']).updateValue('');
+      (<Control>this.addWordForm.controls['front']).updateValue('');
+      (<Control>this.addWordForm.controls['back']).updateValue('');
     }
   }
 }
