@@ -2,6 +2,9 @@ import 'reflect-metadata';
 import 'zone.js/dist/zone';
 import {Component, AfterViewInit} from 'angular2/core';
 import {FormBuilder, ControlGroup, Validators, Control} from 'angular2/common';
+import {Meteor} from 'meteor/meteor';
+import {Decks} from '../../../collections/decks';
+import {Words} from '../../../collections/words';
  
 @Component({
 	selector: 'import-deck',
@@ -11,11 +14,16 @@ import {FormBuilder, ControlGroup, Validators, Control} from 'angular2/common';
 export class ImportDeck implements AfterViewInit {
 	importForm: ControlGroup;
 	inputFile;
+	words: Array<Object>;
 	
 	constructor () {
+		this.words = [];
+		this.inputFile = null;
 		let fb = new FormBuilder();
  		this.importForm = fb.group({
-      		inputfile: ['',Validators.required]
+      		inputfile: [''],
+      		deckName: ['',Validators.required],
+      		deckDescription: ['',Validators.required]
     	});	
     }
     
@@ -31,6 +39,7 @@ export class ImportDeck implements AfterViewInit {
 	        event.stopPropagation();
 	        event.preventDefault();
 	        var f = event.target.files[0];
+	        _this.inputFile = f;
 	        var reader = new FileReader();
 	        reader.onload = function(e) { event.data.function(e.target.result); };
 	        reader.readAsArrayBuffer(f);
@@ -62,8 +71,7 @@ export class ImportDeck implements AfterViewInit {
 	            var fields = note[1].split('\x1f');
 	            return _this.createObj(fieldNames, fields);
 	        });
-	        console.log(deckName);
-	        console.log(wordsArray);
+	        _this.importDeck(deckName,wordsArray);
 	    });
 	}
 	
@@ -83,5 +91,59 @@ export class ImportDeck implements AfterViewInit {
 	        var plain = unzip.decompress("collection.anki2");
 	        this.getInfo(plain);
 	    }
+	}
+	
+	importDeck(name,words) {
+		(<Control>this.importForm.controls['deckName']).updateValue(name);
+		this.words = words;
+	}
+	
+	createDeck(deck) {
+		var _this = this;
+		var _words = this.words;
+		if (this.importForm.valid && this.inputFile) {
+			Decks.insert({
+				name: deck.deckName,
+			    description: deck.deckDescription,
+			    creator: Meteor.userId()
+			},
+			function(err,id) {
+				_this.deckCallback(err,id,_words);
+			});
+			this.words = [];
+	    	this.inputFile = null;			
+ 	    }
+	}
+	
+	deckCallback(err, id, words) {
+		if( err ) return;
+		
+		var _this = this;
+		var _wordCt = words.length;
+				
+    	for(let i in words) {
+    		Words.insert({
+		        front: words[i].Front,
+		        back: words[i].Back,
+		        score: 0,
+		        creator: Meteor.userId(),
+		        deckid: id
+			},
+			function(err,id) {
+				_wordCt = _this.wordCallback(err,id,_wordCt);
+			});
+		}
+	}
+	
+	wordCallback(err, id, wordCt) {
+		if( err ) return;
+		
+		wordCt--;
+		if(wordCt === 0) {
+			(<Control>this.importForm.controls['inputfile']).updateValue('');
+	    	(<Control>this.importForm.controls['deckName']).updateValue('');
+	    	(<Control>this.importForm.controls['deckDescription']).updateValue('');
+		}
+		return wordCt;
 	}
 }

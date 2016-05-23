@@ -1,12 +1,28 @@
-<!-- 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="https://kripken.github.io/sql.js/js/sql.js"></script>
-    <script src="unzip.min.js"></script>
-    <script src="underscore-min.js" ></script>
--->
-
-
 <h1>Upload Anki APKG file</h1>
-<form [ngFormModel]="importForm" #f="ngForm" (submit)="loadFile(f.value)">
+<form [ngFormModel]="importForm" #f="ngForm" (submit)="createDeck(f.value)">
 	<input type="file" id="inputfile" ngControl="inputfile">
+	
+	<label>Name</label>
+	<input type="text" ngControl="deckName" />
+	<label>Description</label>
+	<input type="text" ngControl="deckDescription" />
+	
+	<section *ngIf="words.length > 0">
+	<h2>Deck Words</h2>
+	<table>
+		<thead>
+			<tr>
+				<th>Front</th>
+				<th>Back</th>
+		</thead>
+		<tbody>
+			<tr *ngFor="#word of words">
+				<td>{{word.Front}}</td>
+				<td>{{word.Back}}</td>
+			</tr>
+		</tbody>
+	</table>
+	</section>
+	
+	<button type="submit">Create Deck</button>
 </form>
