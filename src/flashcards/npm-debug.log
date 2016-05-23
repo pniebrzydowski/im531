@@ -1,0 +1,214 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files (x86)\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'zlib',
+1 verbose cli   '--save' ]
+2 info using npm@2.14.20
+3 info using node@v4.4.0
+4 verbose install initial load of D:\eclipsews\im531\web-flashcards\src\flashcards\package.json
+5 verbose installManyTop reading scoped package data from D:\eclipsews\im531\web-flashcards\src\flashcards\node_modules\angular2\package.json
+6 verbose installManyTop reading scoped package data from D:\eclipsews\im531\web-flashcards\src\flashcards\node_modules\angular2-meteor\package.json
+7 verbose installManyTop reading scoped package data from D:\eclipsews\im531\web-flashcards\src\flashcards\node_modules\angular2-meteor-accounts-ui\package.json
+8 verbose installManyTop reading scoped package data from D:\eclipsews\im531\web-flashcards\src\flashcards\node_modules\angular2-meteor-auto-bootstrap\package.json
+9 verbose installManyTop reading scoped package data from D:\eclipsews\im531\web-flashcards\src\flashcards\node_modules\es6-shim\package.json
+10 verbose installManyTop reading scoped package data from D:\eclipsews\im531\web-flashcards\src\flashcards\node_modules\meteor-node-stubs\package.json
+11 verbose installManyTop reading scoped package data from D:\eclipsews\im531\web-flashcards\src\flashcards\node_modules\reflect-metadata\package.json
+12 verbose installManyTop reading scoped package data from D:\eclipsews\im531\web-flashcards\src\flashcards\node_modules\rxjs\package.json
+13 verbose installManyTop reading scoped package data from D:\eclipsews\im531\web-flashcards\src\flashcards\node_modules\zone.js\package.json
+14 info package.json angular2-meteor-accounts-ui@0.3.5 No README data
+15 info package.json angular2-meteor-auto-bootstrap@0.5.1 No repository field.
+16 verbose readDependencies loading dependencies from D:\eclipsews\im531\web-flashcards\src\flashcards\package.json
+17 silly cache add args [ 'zlib', null ]
+18 verbose cache add spec zlib
+19 silly cache add parsed spec Result {
+19 silly cache add   raw: 'zlib',
+19 silly cache add   scope: null,
+19 silly cache add   name: 'zlib',
+19 silly cache add   rawSpec: '',
+19 silly cache add   spec: 'latest',
+19 silly cache add   type: 'tag' }
+20 silly addNamed zlib@latest
+21 verbose addNamed "latest" is being treated as a dist-tag for zlib
+22 info addNameTag [ 'zlib', 'latest' ]
+23 silly mapToRegistry name zlib
+24 silly mapToRegistry using default registry
+25 silly mapToRegistry registry https://registry.npmjs.org/
+26 silly mapToRegistry uri https://registry.npmjs.org/zlib
+27 verbose addNameTag registry:https://registry.npmjs.org/zlib not in flight; fetching
+28 verbose request uri https://registry.npmjs.org/zlib
+29 verbose request no auth needed
+30 info attempt registry request try #1 at 11:36:37 PM
+31 verbose request id 16d21b3721a39fff
+32 http request GET https://registry.npmjs.org/zlib
+33 http 200 https://registry.npmjs.org/zlib
+34 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+34 verbose headers   etag: '"5ZD8OZO6M8FVHQHJHDOOR2QN9"',
+34 verbose headers   'content-type': 'application/json',
+34 verbose headers   'content-encoding': 'gzip',
+34 verbose headers   'cache-control': 'max-age=300',
+34 verbose headers   'content-length': '1369',
+34 verbose headers   'accept-ranges': 'bytes',
+34 verbose headers   date: 'Sun, 22 May 2016 21:36:38 GMT',
+34 verbose headers   via: '1.1 varnish',
+34 verbose headers   age: '0',
+34 verbose headers   connection: 'keep-alive',
+34 verbose headers   'x-served-by': 'cache-fra1222-FRA',
+34 verbose headers   'x-cache': 'MISS',
+34 verbose headers   'x-cache-hits': '0',
+34 verbose headers   'x-timer': 'S1463952997.380805,VS0,VE760',
+34 verbose headers   vary: 'Accept-Encoding' }
+35 silly get cb [ 200,
+35 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+35 silly get     etag: '"5ZD8OZO6M8FVHQHJHDOOR2QN9"',
+35 silly get     'content-type': 'application/json',
+35 silly get     'content-encoding': 'gzip',
+35 silly get     'cache-control': 'max-age=300',
+35 silly get     'content-length': '1369',
+35 silly get     'accept-ranges': 'bytes',
+35 silly get     date: 'Sun, 22 May 2016 21:36:38 GMT',
+35 silly get     via: '1.1 varnish',
+35 silly get     age: '0',
+35 silly get     connection: 'keep-alive',
+35 silly get     'x-served-by': 'cache-fra1222-FRA',
+35 silly get     'x-cache': 'MISS',
+35 silly get     'x-cache-hits': '0',
+35 silly get     'x-timer': 'S1463952997.380805,VS0,VE760',
+35 silly get     vary: 'Accept-Encoding' } ]
+36 verbose get saving zlib to C:\Users\Patrick\AppData\Roaming\npm-cache\registry.npmjs.org\zlib\.cache.json
+37 verbose correctMkdir C:\Users\Patrick\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+38 silly addNameTag next cb for zlib with tag latest
+39 silly addNamed zlib@1.0.5
+40 verbose addNamed "1.0.5" is a plain semver version for zlib
+41 silly mapToRegistry name zlib
+42 silly mapToRegistry using default registry
+43 silly mapToRegistry registry https://registry.npmjs.org/
+44 silly mapToRegistry uri https://registry.npmjs.org/zlib
+45 verbose addRemoteTarball https://registry.npmjs.org/zlib/-/zlib-1.0.5.tgz not in flight; adding
+46 verbose addRemoteTarball [ 'https://registry.npmjs.org/zlib/-/zlib-1.0.5.tgz',
+46 verbose addRemoteTarball   '6e7c972fc371c645a6afb03ab14769def114fcc0' ]
+47 info retry fetch attempt 1 at 11:36:38 PM
+48 info attempt registry request try #1 at 11:36:38 PM
+49 http fetch GET https://registry.npmjs.org/zlib/-/zlib-1.0.5.tgz
+50 http fetch 200 https://registry.npmjs.org/zlib/-/zlib-1.0.5.tgz
+51 silly fetchAndShaCheck shasum 6e7c972fc371c645a6afb03ab14769def114fcc0
+52 verbose addTmpTarball C:\Users\Patrick\AppData\Local\Temp\npm-3664-1d9995a0\registry.npmjs.org\zlib\-\zlib-1.0.5.tgz not in flight; adding
+53 verbose addTmpTarball already have metadata; skipping unpack for zlib@1.0.5
+54 verbose correctMkdir C:\Users\Patrick\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+55 silly cache afterAdd zlib@1.0.5
+56 verbose afterAdd C:\Users\Patrick\AppData\Roaming\npm-cache\zlib\1.0.5\package\package.json not in flight; writing
+57 verbose correctMkdir C:\Users\Patrick\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+58 verbose afterAdd C:\Users\Patrick\AppData\Roaming\npm-cache\zlib\1.0.5\package\package.json written
+59 silly install resolved [ { name: 'zlib',
+59 silly install resolved     description: 'Simple, synchronous deflate/inflate for buffers',
+59 silly install resolved     version: '1.0.5',
+59 silly install resolved     homepage: 'https://github.com/kkaefer/node-zlib',
+59 silly install resolved     author: { name: 'Konstantin Käfer', email: 'kkaefer@gmail.com' },
+59 silly install resolved     repository: { type: 'git', url: 'git://github.com/kkaefer/node-zlib.git' },
+59 silly install resolved     engines: { node: '>=0.2.0' },
+59 silly install resolved     licenses: [ [Object] ],
+59 silly install resolved     main: './lib/zlib',
+59 silly install resolved     _npmJsonOpts:
+59 silly install resolved      { file: '/Users/kkaefer/.npm/zlib/1.0.5/package/package.json',
+59 silly install resolved        contributors: false,
+59 silly install resolved        serverjs: false,
+59 silly install resolved        wscript: true },
+59 silly install resolved     _id: 'zlib@1.0.5',
+59 silly install resolved     scripts: { preinstall: 'node-waf clean || true; node-waf configure build' },
+59 silly install resolved     dependencies: {},
+59 silly install resolved     devDependencies: {},
+59 silly install resolved     _engineSupported: true,
+59 silly install resolved     _npmVersion: '1.0.23',
+59 silly install resolved     _nodeVersion: 'v0.4.9',
+59 silly install resolved     _defaultsLoaded: true,
+59 silly install resolved     dist:
+59 silly install resolved      { shasum: '6e7c972fc371c645a6afb03ab14769def114fcc0',
+59 silly install resolved        tarball: 'https://registry.npmjs.org/zlib/-/zlib-1.0.5.tgz' },
+59 silly install resolved     maintainers: [ [Object], [Object], [Object], [Object], [Object] ],
+59 silly install resolved     directories: {},
+59 silly install resolved     _shasum: '6e7c972fc371c645a6afb03ab14769def114fcc0',
+59 silly install resolved     _resolved: 'https://registry.npmjs.org/zlib/-/zlib-1.0.5.tgz',
+59 silly install resolved     _from: 'zlib@latest' } ]
+60 info install zlib@1.0.5 into D:\eclipsews\im531\web-flashcards\src\flashcards
+61 info installOne zlib@1.0.5
+62 verbose installOne of zlib to D:\eclipsews\im531\web-flashcards\src\flashcards not in flight; installing
+63 verbose correctMkdir C:\Users\Patrick\AppData\Roaming\npm-cache\_locks correctMkdir not in flight; initializing
+64 verbose lock using C:\Users\Patrick\AppData\Roaming\npm-cache\_locks\zlib-1a87b270ea794eec.lock for D:\eclipsews\im531\web-flashcards\src\flashcards\node_modules\zlib
+65 silly install write writing zlib 1.0.5 to D:\eclipsews\im531\web-flashcards\src\flashcards\node_modules\zlib
+66 verbose unbuild node_modules\zlib
+67 silly gentlyRm D:\eclipsews\im531\web-flashcards\src\flashcards\node_modules\zlib is being purged from base D:\eclipsews\im531\web-flashcards\src\flashcards
+68 verbose gentlyRm don't care about contents; nuking D:\eclipsews\im531\web-flashcards\src\flashcards\node_modules\zlib
+69 verbose tar unpack C:\Users\Patrick\AppData\Roaming\npm-cache\zlib\1.0.5\package.tgz
+70 verbose tar unpacking to D:\eclipsews\im531\web-flashcards\src\flashcards\node_modules\zlib
+71 silly gentlyRm D:\eclipsews\im531\web-flashcards\src\flashcards\node_modules\zlib is being purged
+72 verbose gentlyRm don't care about contents; nuking D:\eclipsews\im531\web-flashcards\src\flashcards\node_modules\zlib
+73 silly gunzTarPerm modes [ '777', '666' ]
+74 silly gunzTarPerm extractEntry .gitignore
+75 silly gunzTarPerm modified mode [ '.gitignore', 420, 438 ]
+76 silly gunzTarPerm extractEntry configure
+77 silly gunzTarPerm modified mode [ 'configure', 493, 511 ]
+78 silly gunzTarPerm extractEntry index.js
+79 silly gunzTarPerm modified mode [ 'index.js', 420, 438 ]
+80 silly gunzTarPerm extractEntry LICENSE
+81 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+82 silly gunzTarPerm extractEntry Makefile
+83 silly gunzTarPerm modified mode [ 'Makefile', 420, 438 ]
+84 silly gunzTarPerm extractEntry package.json
+85 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+86 silly gunzTarPerm extractEntry README.md
+87 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+88 silly gunzTarPerm extractEntry wscript
+89 silly gunzTarPerm modified mode [ 'wscript', 420, 438 ]
+90 silly gunzTarPerm extractEntry lib/zlib.js
+91 silly gunzTarPerm modified mode [ 'lib/zlib.js', 420, 438 ]
+92 silly gunzTarPerm extractEntry src/node-zlib.cc
+93 silly gunzTarPerm modified mode [ 'src/node-zlib.cc', 420, 438 ]
+94 silly gunzTarPerm extractEntry test/deflate.test.js
+95 silly gunzTarPerm modified mode [ 'test/deflate.test.js', 420, 438 ]
+96 silly gunzTarPerm extractEntry test/inflate.test.js
+97 silly gunzTarPerm modified mode [ 'test/inflate.test.js', 420, 438 ]
+98 verbose write writing to D:\eclipsews\im531\web-flashcards\src\flashcards\node_modules\zlib\package.json
+99 info preinstall zlib@1.0.5
+100 verbose unsafe-perm in lifecycle true
+101 info zlib@1.0.5 Failed to exec preinstall script
+102 verbose unlock done using C:\Users\Patrick\AppData\Roaming\npm-cache\_locks\zlib-1a87b270ea794eec.lock for D:\eclipsews\im531\web-flashcards\src\flashcards\node_modules\zlib
+103 verbose stack Error: zlib@1.0.5 preinstall: `node-waf clean || true; node-waf configure build`
+103 verbose stack Exit status 1
+103 verbose stack     at EventEmitter.<anonymous> (C:\Program Files (x86)\nodejs\node_modules\npm\lib\utils\lifecycle.js:214:16)
+103 verbose stack     at emitTwo (events.js:87:13)
+103 verbose stack     at EventEmitter.emit (events.js:172:7)
+103 verbose stack     at ChildProcess.<anonymous> (C:\Program Files (x86)\nodejs\node_modules\npm\lib\utils\spawn.js:24:14)
+103 verbose stack     at emitTwo (events.js:87:13)
+103 verbose stack     at ChildProcess.emit (events.js:172:7)
+103 verbose stack     at maybeClose (internal/child_process.js:827:16)
+103 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+104 verbose pkgid zlib@1.0.5
+105 verbose cwd D:\eclipsews\im531\web-flashcards\src\flashcards
+106 error Windows_NT 10.0.10586
+107 error argv "C:\\Program Files (x86)\\nodejs\\node.exe" "C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "zlib" "--save"
+108 error node v4.4.0
+109 error npm  v2.14.20
+110 error code ELIFECYCLE
+111 error zlib@1.0.5 preinstall: `node-waf clean || true; node-waf configure build`
+111 error Exit status 1
+112 error Failed at the zlib@1.0.5 preinstall script 'node-waf clean || true; node-waf configure build'.
+112 error This is most likely a problem with the zlib package,
+112 error not with npm itself.
+112 error Tell the author that this fails on your system:
+112 error     node-waf clean || true; node-waf configure build
+112 error You can get information on how to open an issue for this project with:
+112 error     npm bugs zlib
+112 error Or if that isn't available, you can get their info via:
+112 error
+112 error     npm owner ls zlib
+112 error There is likely additional logging output above.
+113 verbose exit [ 1, true ]
+114 verbose unbuild node_modules\zlib
+115 info preuninstall zlib@1.0.5
+116 info uninstall zlib@1.0.5
+117 verbose unbuild rmStuff zlib@1.0.5 from D:\eclipsews\im531\web-flashcards\src\flashcards\node_modules
+118 info postuninstall zlib@1.0.5
+119 silly gentlyRm D:\eclipsews\im531\web-flashcards\src\flashcards\node_modules\zlib is being purged from base D:\eclipsews\im531\web-flashcards\src\flashcards
+120 verbose gentlyRm don't care about contents; nuking D:\eclipsews\im531\web-flashcards\src\flashcards\node_modules\zlib
+121 silly vacuum-fs purging D:\eclipsews\im531\web-flashcards\src\flashcards\node_modules\zlib
+122 silly vacuum-fs quitting because other entries in D:\eclipsews\im531\web-flashcards\src\flashcards\node_modules

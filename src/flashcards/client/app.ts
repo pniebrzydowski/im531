@@ -12,11 +12,6 @@ import {ReviewWords} from './components/review-words/review-words';
 @Component({
 	selector: 'app',
 	templateUrl: 'client/app.html',
-	styleUrls: [
-		'/client/css/normalize.css',
-		'/client/css/global.css',
-  		'/client/css/grid.css',
-  	],
 	directives: [ROUTER_DIRECTIVES]
 })
 
