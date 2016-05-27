@@ -6,7 +6,7 @@ import {Meteor} from 'meteor/meteor';
 import {Mongo} from 'meteor/mongo';
 import {AddWordForm} from '../add-word-form/add-word-form';
 import {Words} from '../../../collections/words';
-import {Decks} from '../../../collections/decks.ts';
+import {Decks} from '../../../collections/decks';
  
 @Component({
 	selector: 'word-list',
@@ -18,20 +18,12 @@ export class WordList {
 	deck;
 	words: Mongo.Cursor<Object>;
   
-	constructor (params: RouteParams) {
+	constructor (private params: RouteParams) {
 		let deckId = params.get('deckId');
-		if(!deckId) {
-			this.words = null;
-		} else {
-			this.retrieveDeck(deckId);
-		}
+	    this.words = Words.find( { $and: [ { creator:  Meteor.userId()  }, { deckid: deckId  } ] } );
+    	this.deck = Decks.findOne({_id: deckId});
 	}
-	
-	retrieveDeck(id) {
-	    this.words = Words.find( { $and: [ { creator:  Meteor.userId()  }, { deckid: id  } ] } );
-    	this.deck = Decks.findOne({_id: id});
-	}
-  
+	  
 	removeWord(word) {
     	Words.remove(word._id);
 	}

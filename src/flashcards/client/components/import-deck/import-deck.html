@@ -1,5 +1,5 @@
 <h1>Upload Anki APKG file</h1>
-<form [ngFormModel]="importForm" #f="ngForm" (submit)="createDeck(f.value)">
+<form [ngFormModel]="importForm" #f="ngForm" (ngSubmit)="createDeck(f.value)">
 	<input type="file" id="inputfile" ngControl="inputfile">
 	
 	<label>Name</label>

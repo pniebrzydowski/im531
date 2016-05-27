@@ -12,13 +12,13 @@ import {ReviewWords} from './components/review-words/review-words';
  
 @Component({
 	selector: 'app',
-	templateUrl: 'client/app.html',
+	templateUrl: '/client/app.html',
 	directives: [ROUTER_DIRECTIVES]
 })
 
 @RouteConfig([
+	{ path: '/', as: 'DeckList', component: DeckList },
 	{ path: '/login', as: 'LoginForm', component: LoginForm },
-	{ path: '/decks', as: 'DeckList', component: DeckList },
 	{ path: '/create', as: 'AddDeckForm', component: AddDeckForm },
 	{ path: '/words/:deckId', as: 'WordList', component: WordList },
 	{ path: '/review/:deckId', as: 'ReviewWords', component: ReviewWords }

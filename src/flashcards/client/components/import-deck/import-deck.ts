@@ -1,8 +1,9 @@
 import 'reflect-metadata';
 import 'zone.js/dist/zone';
 import {Component, AfterViewInit} from 'angular2/core';
-import {FormBuilder, ControlGroup, Validators, Control} from 'angular2/common';
 import {Meteor} from 'meteor/meteor';
+import {FormBuilder, ControlGroup, Validators, Control} from 'angular2/common';
+import {Router} from 'angular2/router'
 import {Decks} from '../../../collections/decks';
 import {Words} from '../../../collections/words';
  
@@ -14,10 +15,12 @@ import {Words} from '../../../collections/words';
 export class ImportDeck implements AfterViewInit {
 	importForm: ControlGroup;
 	inputFile;
+	newDeckId;
 	words: Array<Object>;
 	
-	constructor () {
+	constructor (private router:Router) {
 		this.words = [];
+		this.newDeckId = null;
 		this.inputFile = null;
 		let fb = new FormBuilder();
  		this.importForm = fb.group({
@@ -118,6 +121,7 @@ export class ImportDeck implements AfterViewInit {
 	deckCallback(err, id, words) {
 		if( err ) return;
 		
+		this.newDeckId = id;
 		var _this = this;
 		var _wordCt = words.length;
 				
@@ -140,9 +144,7 @@ export class ImportDeck implements AfterViewInit {
 		
 		wordCt--;
 		if(wordCt === 0) {
-			(<Control>this.importForm.controls['inputfile']).updateValue('');
-	    	(<Control>this.importForm.controls['deckName']).updateValue('');
-	    	(<Control>this.importForm.controls['deckDescription']).updateValue('');
+			this.router.navigate(['/WordList', {deckId: this.newDeckId}]);
 		}
 		return wordCt;
 	}

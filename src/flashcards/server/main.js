@@ -1,5 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import {Words} from '../collections/words.ts';
+import {Decks} from '../collections/decks.ts';
 
 //UserAccounts = new Mongo.Collection('users');
 

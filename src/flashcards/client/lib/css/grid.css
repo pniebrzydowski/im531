@@ -221,15 +221,15 @@
 }
 
 .button {
-	font-weight: bold;
-	margin: 0;
-	padding: 1.15em 2.175em;
-	color: #fff;
 	background: #2487d1;
 	border-radius: 2em;
 	border: none;
-	white-space: nowrap;
+	color: #fff;
+	display: inline-block;
 	font-weight: normal;
+	margin: 0;
+	padding: 1.15em 2.175em;
+	white-space: nowrap;
 }
 
 .button--view {
