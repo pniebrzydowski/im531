@@ -3,18 +3,21 @@ import {Component} from 'angular2/core';
 import {Meteor} from 'meteor/meteor';
 import {Mongo} from 'meteor/mongo';
 import {FormBuilder, ControlGroup, Validators, Control} from 'angular2/common';
+import {Router} from 'angular2/router'
+import {ImportDeck} from '../import-deck/import-deck';
 import {Decks} from '../../../collections/decks';
 
  
 @Component({
   selector: 'add-deck-form',
-  templateUrl: '/client/components/add-deck-form/add-deck-form.html'
+  templateUrl: '/client/components/add-deck-form/add-deck-form.html',
+  directives: [ImportDeck]
 })
 
 export class AddDeckForm {
   addDeckForm: ControlGroup;
  
-  constructor() {
+  constructor(private router: Router) {
     let fb = new FormBuilder();
  
     this.addDeckForm = fb.group({
@@ -25,14 +28,13 @@ export class AddDeckForm {
   
   addDeck(deck) {
     if (this.addDeckForm.valid) {
-      Decks.insert({
+      let newDeckId = Decks.insert({
         name: deck.name,
         description: deck.description,
         creator: Meteor.userId()
       });
  
-      (<Control>this.addDeckForm.controls['name']).updateValue('');
-      (<Control>this.addDeckForm.controls['description']).updateValue('');
+      this.router.navigate(['/WordList', {deckId: newDeckId}]);
     }
   }
 }

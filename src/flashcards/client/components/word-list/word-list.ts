@@ -19,8 +19,17 @@ export class WordList {
 	words: Mongo.Cursor<Object>;
   
 	constructor (params: RouteParams) {
-    	this.words = Words.find( { $and: [ { creator:  Meteor.userId()  }, { deckid: params.get('deckId')  } ] } );
-    	this.deck = Decks.findOne({_id: params.get('deckId')});
+		let deckId = params.get('deckId');
+		if(!deckId) {
+			this.words = null;
+		} else {
+			this.retrieveDeck(deckId);
+		}
+	}
+	
+	retrieveDeck(id) {
+	    this.words = Words.find( { $and: [ { creator:  Meteor.userId()  }, { deckid: id  } ] } );
+    	this.deck = Decks.findOne({_id: id});
 	}
   
 	removeWord(word) {

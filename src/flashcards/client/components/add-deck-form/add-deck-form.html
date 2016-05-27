@@ -2,10 +2,12 @@
 	<h1>Add New Deck</h1>
 </header>
 
-<form [ngFormModel]="addDeckForm" #f="ngForm" (submit)="addDeck(f.value)">
+<form [ngFormModel]="addDeckForm" #f="ngForm" (ngSubmit)="addDeck(f.value)">
   <label>Deck</label>
   <input type="text" ngControl="name" />
   <label>Description</label>
   <input type="text" ngControl="description" />
-  <button>Add</button>
+  <button type="submit">Add</button>
 </form>
+
+<import-deck></import-deck>
