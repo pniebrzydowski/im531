@@ -21,8 +21,7 @@ export class AddDeckForm {
     let fb = new FormBuilder();
  
     this.addDeckForm = fb.group({
-      name: ['',Validators.required],
-      description: ['',Validators.required]
+      name: ['',Validators.required]
     });
   }
   
@@ -30,11 +29,10 @@ export class AddDeckForm {
     if (this.addDeckForm.valid) {
       let newDeckId = Decks.insert({
         name: deck.name,
-        description: deck.description,
         creator: Meteor.userId()
       });
  
-      this.router.navigate(['/WordList', {deckId: newDeckId}]);
+      this.router.navigate(['/DeckSettings', {deckId: newDeckId}]);
     }
   }
 }

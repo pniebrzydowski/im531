@@ -7,7 +7,7 @@ import {ROUTER_PROVIDERS, ROUTER_DIRECTIVES, RouteConfig, APP_BASE_HREF} from 'a
 import {LoginForm} from './components/login-form/login-form';
 import {DeckList} from './components/deck-list/deck-list';
 import {AddDeckForm} from './components/add-deck-form/add-deck-form';
-import {WordList} from './components/word-list/word-list';
+import {DeckSettings} from './components/deck-settings/deck-settings';
 import {ReviewWords} from './components/review-words/review-words';
  
 @Component({
@@ -20,7 +20,7 @@ import {ReviewWords} from './components/review-words/review-words';
 	{ path: '/', as: 'DeckList', component: DeckList },
 	{ path: '/login', as: 'LoginForm', component: LoginForm },
 	{ path: '/create', as: 'AddDeckForm', component: AddDeckForm },
-	{ path: '/words/:deckId', as: 'WordList', component: WordList },
+	{ path: '/deck/:deckId', as: 'DeckSettings', component: DeckSettings },
 	{ path: '/review/:deckId', as: 'ReviewWords', component: ReviewWords }
 ])
 

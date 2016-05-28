@@ -144,7 +144,7 @@ export class ImportDeck implements AfterViewInit {
 		
 		wordCt--;
 		if(wordCt === 0) {
-			this.router.navigate(['/WordList', {deckId: this.newDeckId}]);
+			this.router.navigate(['/DeckSettings', {deckId: this.newDeckId}]);
 		}
 		return wordCt;
 	}
