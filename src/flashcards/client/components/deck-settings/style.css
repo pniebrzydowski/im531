@@ -1,0 +1,50 @@
+deck-settings .container {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+deck-settings .btn-round-lg{
+  border-radius: 22.5px;
+}
+deck-settings .btn-round{
+  border-radius: 17px;
+}
+deck-settings .btn-round-sm{
+  border-radius: 15px;
+}
+deck-settings .btn-round-xs{
+	border-radius: 11px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+deck-settings .form-control{
+	border-radius: 17px;
+	background-color: transparent;
+}
+
+deck-settings #saveBtn {
+	background-color: #2487d1;
+	color: #ededed;
+	border-color: #2487d1;
+	width: 32%;
+}
+
+deck-settings #cancelBtn {
+	background-color: #898989;
+	color: #ededed;
+	border-color: #898989;
+	width: 32%;
+}
+
+deck-settings #deleteBtn {
+	background-color: #ff3333;
+	color: #ededed;
+	border-color: #ff3333;
+	width: 32%;
+}
+
+deck-settings h1 {
+	margin-top: 1em;
+	margin-bottom: 2em;
+}

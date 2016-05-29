@@ -12,31 +12,46 @@ import {RouteParams} from 'angular2/router';
 })
 
 export class AddWordForm {
-
-  addWordForm: ControlGroup;
+	showWindow: boolean = false;
+	addWordForm: ControlGroup;
  
-  constructor(params: RouteParams) {
-    let fb = new FormBuilder();
- 
-    this.addWordForm = fb.group({
-      front: ['',Validators.required],
-      back: ['',Validators.required],
-      deckId: params.get('deckId')
-    });
-  }
+	constructor(params: RouteParams) {
+		let fb = new FormBuilder();
+		
+		this.addWordForm = fb.group({
+	    	front: ['',Validators.required],
+	    	back: ['',Validators.required],
+	    	deckId: params.get('deckId')
+		});
+	}
   
-  addWord(word) {
-    if (this.addWordForm.valid) {
-      Words.insert({
-        front: word.front,
-        back: word.back,
-        score: 0,
-        creator: Meteor.userId(),
-        deckid: word.deckId
-      });
+	addNewCard() {
+		this.openWindow();
+	}
+  
+  
+	addWord(word) {
+		if (this.addWordForm.valid) {
+			Words.insert({
+				front: word.front,
+				back: word.back,
+				score: 0,
+				creator: Meteor.userId(),
+				deckid: word.deckId
+			});
  
-      (<Control>this.addWordForm.controls['front']).updateValue('');
-      (<Control>this.addWordForm.controls['back']).updateValue('');
-    }
-  }
+			(<Control>this.addWordForm.controls['front']).updateValue('');
+			(<Control>this.addWordForm.controls['back']).updateValue('');
+      
+			this.closeWindow();
+		}
+	}
+  
+	openWindow() {
+		this.showWindow = true;
+	}
+  
+	closeWindow() {
+		this.showWindow = false;
+	}
 }

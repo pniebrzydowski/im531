@@ -1,76 +1,33 @@
-word-list .container {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-word-list .btn-round-lg{
-    border-radius: 22.5px;
-}
-word-list .btn-round{
-    border-radius: 17px;
-}
-word-list .btn-round-sm{
-    border-radius: 15px;
-}
-word-list .btn-round-xs{
-    border-radius: 11px;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-word-list .form-control{
-    border-radius: 17px;
-    background-color: transparent;
-}
-
-word-list #saveBtn {
-    background-color: #2487d1;
-    color: #ededed;
-    border-color: #2487d1;
-    width: 32%;
-}
-
-word-list #cancelBtn {
-    background-color: #898989;
-    color: #ededed;
-    border-color: #898989;
-    width: 32%;
-}
-
 word-list #deleteBtn {
-    background-color: #ff3333;
-    color: #ededed;
-    border-color: #ff3333;
-    width: 32%;
+	background-color: #ff3333;
+	color: #ededed;
+	border-color: #ff3333;
+	width: 32%;
 }
 
 word-list #importBtn {
-    background-color: transparent;
-    color: #ededed;
-    width: 6em;
-    margin-top: 1em;
+	background-color: #898989;
+	color: #fff;
+	width: 6em;
+	margin-top: 1em;
 }
 
 word-list .card {
-    background-color: #f2f2f2;
-    color: #898989;
-    height: 9em;
-    padding: 0.5em;
-    padding-top: 1.5em;
-    text-align: center;
-    margin-bottom: 2em;
+	background-color: #f2f2f2;
+	color: #898989;
+	height: 9em;
+	padding: 0.5em;
+	padding-top: 1.5em;
+	text-align: center;
+	margin-bottom: 2em;
 }
 
 word-list #addCard {
-    padding-top: 2.5em;
+	cursor: pointer;
+  padding-top: 2.5em;
 }
 
 word-list hr {
-    background-color: #000;
-    border-color: inherit;
-}
-
-word-list h1 {
-    margin-top: 1em;
-    margin-bottom: 2em;
+	background-color: #000;
+	border-color: inherit;
 }

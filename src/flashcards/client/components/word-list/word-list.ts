@@ -23,10 +23,6 @@ export class WordList {
 	    this.words = Words.find( { $and: [ { creator:  Meteor.userId() }, { deckid: deckId  } ] } );
 	}
 	
-	addNewCard() {
-	
-	}
-	
 	openImport() {
 	
 	}

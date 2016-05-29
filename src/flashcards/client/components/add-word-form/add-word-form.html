@@ -1,7 +1,20 @@
-<form [ngFormModel]="addWordForm" #f="ngForm" (submit)="addWord(f.value)">
-  <label>Front</label>
-  <input type="text" ngControl="front" />
-  <label>Back</label>
-  <input type="text" ngControl="back" />
-  <button>Add</button>
-</form>
+<div class="preview" 
+	[ngClass] = "{'preview--open': showWindow != false,
+				 'preview--image-loaded': showWindow != false}">
+	<button (click)="closeWindow()" class="action action--close">
+		<span class="text-hidden">Close</span>
+	</button>
+	<form [ngFormModel]="addWordForm" #f="ngForm" (submit)="addWord(f.value)">
+		<p class="button--view">
+			<button type="submit" class="button">Add</button>
+			<button (click)="closeWindow()" class="button">Cancel</button>
+		</p>
+	
+		<div class="description description--preview">
+			<label>Front</label>
+			<input type="text" ngControl="front" />
+			<label>Back</label>
+			<input type="text" ngControl="back" />
+		</div>
+	</form>
+</div>

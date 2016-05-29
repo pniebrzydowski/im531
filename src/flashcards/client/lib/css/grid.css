@@ -94,6 +94,15 @@
 	opacity: 1;
 }
 
+.preview label {
+	display: block;
+}
+
+.preview input {
+	color: #000;
+	margin-bottom: 1em;
+}
+
 .clone {
 	position: fixed;
 	z-index: 110;
