@@ -1,9 +1,9 @@
 import 'reflect-metadata';
 import 'zone.js/dist/zone';
-import {Component, AfterViewInit} from 'angular2/core';
 import {Meteor} from 'meteor/meteor';
+import {Component, AfterViewInit, ChangeDetectorRef} from 'angular2/core';
 import {FormBuilder, ControlGroup, Validators, Control} from 'angular2/common';
-import {Router} from 'angular2/router'
+import {Router, RouteParams} from 'angular2/router'
 import {Decks} from '../../../collections/decks';
 import {Words} from '../../../collections/words';
  
@@ -13,20 +13,17 @@ import {Words} from '../../../collections/words';
 })
 
 export class ImportDeck implements AfterViewInit {
+  showWindow: boolean = false;
 	importForm: ControlGroup;
 	inputFile;
-	newDeckId;
 	words: Array<Object>;
 	
-	constructor (private router:Router) {
+	constructor (private router:Router, private params: RouteParams, private ref: ChangeDetectorRef) {
 		this.words = [];
-		this.newDeckId = null;
 		this.inputFile = null;
 		let fb = new FormBuilder();
  		this.importForm = fb.group({
-      		inputfile: [''],
-      		deckName: ['',Validators.required],
-      		deckDescription: ['',Validators.required]
+      		inputfile: ['']
     	});	
     }
     
@@ -97,55 +94,86 @@ export class ImportDeck implements AfterViewInit {
 	}
 	
 	importDeck(name,words) {
-		(<Control>this.importForm.controls['deckName']).updateValue(name);
 		this.words = words;
 	}
 	
-	createDeck(deck) {
+	addWords() {
 		var _this = this;
 		var _words = this.words;
 		if (this.importForm.valid && this.inputFile) {
-			Decks.insert({
-				name: deck.deckName,
-			    description: deck.deckDescription,
-			    creator: Meteor.userId()
-			},
-			function(err,id) {
-				_this.deckCallback(err,id,_words);
-			});
-			this.words = [];
-	    	this.inputFile = null;			
- 	    }
-	}
-	
-	deckCallback(err, id, words) {
-		if( err ) return;
-		
-		this.newDeckId = id;
-		var _this = this;
-		var _wordCt = words.length;
+		  var _this = this;
+		  var _wordCt = this.words.length;
+		  
+		  /*let docs = [];
+		  for(let i in this.words) {
+		    docs.push({
+		      front: this.words[i].Front,
+          back: this.words[i].Back,
+          score: 0,
+          creator: Meteor.userId(),
+          deckid: this.params.get('deckId')
+		    });
+		  }
+		  this.insertBulk(Words,docs);*/
 				
-    	for(let i in words) {
-    		Words.insert({
-		        front: words[i].Front,
-		        back: words[i].Back,
-		        score: 0,
-		        creator: Meteor.userId(),
-		        deckid: id
-			},
-			function(err,id) {
-				_wordCt = _this.wordCallback(err,id,_wordCt);
-			});
+    	for(let i in this.words) {
+        setTimeout( function() {
+      		Words.insert({
+  	        front: _this.words[i].Front,
+  	        back: _this.words[i].Back,
+  	        score: 0,
+  	        creator: Meteor.userId(),
+  	        deckid: _this.params.get('deckId')
+    			},
+    			function(err,id) {
+    				_wordCt = _this.wordCallback(err,_wordCt);
+    			});
+    		}, 10);
+      }
 		}
 	}
 	
-	wordCallback(err, id, wordCt) {
+	wordCallback(err, wordCt) {
 		if( err ) return;
 		
 		wordCt--;
 		if(wordCt === 0) {
-			this.router.navigate(['/DeckSettings', {deckId: this.newDeckId}]);
+		  this.words = [];
+		  (<Control>this.importForm.controls['inputfile']).updateValue('');
+			this.closeWindow();
 		}
 		return wordCt;
 	}
+	
+	insertBulk = function(collection, documents){
+    if(collection) {
+      return _.compact(_.map(documents, function(item){
+        if(_.isObject(item)) {
+          var _id = collection._makeNewID();
+
+          // insert with reactivity only on the last item
+          if(_.last(documents) === item)
+            _id = collection.insert(item);
+
+          // insert without reactivity
+          else {
+            item._id = _id;
+            collection._collection._docs._map[_id] = item;
+          }
+
+          return _id;
+        }
+      }));
+    }
+  }
+	
+	 openWindow() {
+    this.showWindow = true;
+    this.ref.detectChanges();
+  }
+  
+  closeWindow() {
+    this.showWindow = false;
+    this.ref.detectChanges();
+  }
 }

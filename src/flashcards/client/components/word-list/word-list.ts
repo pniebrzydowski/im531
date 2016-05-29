@@ -5,6 +5,7 @@ import {RouteParams} from 'angular2/router';
 import {Meteor} from 'meteor/meteor';
 import {Mongo} from 'meteor/mongo';
 import {AddWordForm} from '../add-word-form/add-word-form';
+import {ImportDeck} from '../import-deck/import-deck';
 import {Words} from '../../../collections/words';
 import {Decks} from '../../../collections/decks';
  
@@ -12,7 +13,7 @@ import {Decks} from '../../../collections/decks';
 	selector: 'word-list',
 	templateUrl: '/client/components/word-list/word-list.html',
 	styleUrls: ['/client/components/word-list/style.css'],
-	directives: [AddWordForm]
+	directives: [AddWordForm,ImportDeck]
 })
 
 export class WordList {
@@ -20,11 +21,7 @@ export class WordList {
   
 	constructor (private params: RouteParams) {
 		let deckId = params.get('deckId');
-	    this.words = Words.find( { $and: [ { creator:  Meteor.userId() }, { deckid: deckId  } ] } );
-	}
-	
-	openImport() {
-	
+  	this.words = Words.find( { $and: [ { creator:  Meteor.userId() }, { deckid: deckId  } ] } );
 	}
 	
 	removeWord(word) {

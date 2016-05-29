@@ -4,14 +4,12 @@ import {Meteor} from 'meteor/meteor';
 import {Mongo} from 'meteor/mongo';
 import {FormBuilder, ControlGroup, Validators, Control} from 'angular2/common';
 import {Router} from 'angular2/router'
-import {ImportDeck} from '../import-deck/import-deck';
 import {Decks} from '../../../collections/decks';
 
  
 @Component({
   selector: 'add-deck-form',
-  templateUrl: '/client/components/add-deck-form/add-deck-form.html',
-  directives: [ImportDeck]
+  templateUrl: '/client/components/add-deck-form/add-deck-form.html'
 })
 
 export class AddDeckForm {

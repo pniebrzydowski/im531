@@ -42,7 +42,7 @@ export class DeckSettings {
   }
   
   resetDeck() {
-	(<Control>this.updateDeckForm.controls['title']).updateValue(this.deck.title);
+  	(<Control>this.updateDeckForm.controls['title']).updateValue(this.deck.title);
   }
   
   deleteDeck() {
