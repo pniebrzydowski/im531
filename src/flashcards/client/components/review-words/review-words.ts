@@ -21,6 +21,7 @@ export class ReviewWords {
 	currentWord;
 	currentWordIndex;
 	words: Array<Object>;
+	reviewWords: Array<Object>;
 	results;
 
 	constructor (params: RouteParams) {
@@ -29,15 +30,33 @@ export class ReviewWords {
 		this.showReview = false;
 		this.deckId = params.get('deckId');
 		this.currentWordIndex = -1;
-		this.moveToNextWord();
-		this.showFront = true;
 		this.results = {
 			total: this.words.length,
 			right: 0,
-			wrong: 0
+			wrong: 0,
+			skipped: 0
 		};
-	}	
 
+    this.setReviewWords(20);
+	}
+	
+	setReviewWords(quantity) {
+	  let wordArray = this.words;
+	  wordArray.sort(this.sortWordsByScoreAsc);
+	  let wordsForReview = wordArray.slice(0,quantity-1);
+	  wordsForReview = _.shuffle(wordsForReview);
+    this.results.total = quantity;
+	  
+	  this.reviewWords = wordsForReview;
+    this.currentWord = wordsForReview[0];
+    this.showReview = true;
+    this.showFront = true;
+	}
+	
+	sortWordsByScoreAsc(a,b) {
+	  return a.score - b.score;
+	}
+	
 	increaseScore() {
     	this.currentWord.score += 5;
     	this.updateWord(this.currentWord);
@@ -51,6 +70,11 @@ export class ReviewWords {
 		this.results.wrong++;
 		this.moveToNextWord();
 	}
+	
+	skipWord() {
+	  this.results.skipped++;
+	  this.moveToNextWord();
+	}
   
 	updateWord(word) {
 		Words.update({_id : word._id}, {
@@ -62,12 +86,12 @@ export class ReviewWords {
 	
 	moveToNextWord() {
 		this.currentWordIndex++;
-		if( this.currentWordIndex == this.words.length ) {
+		if( this.currentWordIndex == this.reviewWords.length ) {
 			this.showResults = true;
 			this.showReview = false;
 		} else {
 			this.showFront = true;
-			this.currentWord = this.words[this.currentWordIndex];
+			this.currentWord = this.reviewWords[this.currentWordIndex];
 			this.showResults = false;
 			this.showReview = true;
 		}

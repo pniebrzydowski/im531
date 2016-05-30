@@ -234,6 +234,7 @@
 	border-radius: 2em;
 	border: none;
 	color: #fff;
+	cursor: pointer;
 	display: inline-block;
 	font-weight: normal;
 	margin: 0;

@@ -17,6 +17,7 @@ review-words .intro p {
 	font-size: 1.5em;
 }
 review-words .section {
+	clear: both;
 	text-align:center;
 }
 
@@ -30,11 +31,11 @@ review-words div.fp-controlArrow.fp-next {
 
 review-words #front,
 review-words #back {
-	background-color: transparent;
+	background-color: #e5e5e5;
 	width: 40%;
-	height: 18em;
+	height: 20em;
 	margin: auto;
-	padding: 1em;
+	padding: 2em;
 }
 
 review-words .buttons {
@@ -112,10 +113,7 @@ review-words #rightButton:hover {
 	color: #ffffff;
 }
 
-review-words .close {
-	width: 2em;
-	float: right;
-	margin-top: 1em;
-	margin-right: 1em;
-
+review-words #fullpage {
+  background-color: #1f1d1d;
+  height: 100%;
 }
