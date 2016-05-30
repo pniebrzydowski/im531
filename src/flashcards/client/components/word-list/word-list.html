@@ -23,7 +23,10 @@
     </div>
 
     <div class="col-sm-4 col-md-3" *ngFor="#word of words">
-      <div class="card">
+      <div class="card card-overlay" *ngIf="word.hovered" (mouseleave)="word.hovered = false">
+        <p><button class="button" (click)="removeWord(word)">Delete</button></p>
+      </div>
+      <div class="card" *ngIf="!word.hovered" (mouseenter)="word.hovered = true">
         <p>{{word.front}}</p>
         <hr>
         <p>{{word.back}}</p>

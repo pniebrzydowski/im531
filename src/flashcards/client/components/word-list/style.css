@@ -18,8 +18,18 @@ word-list .card {
 	height: 9em;
 	padding: 0.5em;
 	padding-top: 1.5em;
+	position: relative;
 	text-align: center;
 	margin-bottom: 2em;
+}
+
+word-list .card-overlay {
+	background: #1f1d1d;
+	padding: 0;
+}
+
+word-list .card-overlay button {
+	margin: 3em 0;
 }
 
 word-list #addCard {
