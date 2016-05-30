@@ -23,8 +23,7 @@
 				<div (click)="preview(deck)" class="img-wrap">
 					<img src="/img/sample.jpg" alt="sample img" />
 					<div class="description description--grid">
-						<h3>{{deck.name}}</h3>
-						<p>{{deck.description}}</p>
+						<h3>{{deck.title}}</h3>
 					</div>
 				</div>
 			</div>
@@ -40,11 +39,11 @@
 			
 			<p class="button--view">
 				<a [routerLink]="['/DeckSettings', {deckId: previewDeck._id}]"
-					class="button">Edit</a>
+					  class="button">Edit</a>
 				<a [routerLink]="['/ReviewWords', {deckId: previewDeck._id}]"
-					class="button">Play the Deck</a>
-				<button (click)="remove(previewDeck)"
-					class="button">Delete</button>
+				    class="button">Play the Deck</a>
+				<a (click)="remove(previewDeck)"
+            class="button">Delete</a>
 			</p>
 
 			<div class="description description--preview">
