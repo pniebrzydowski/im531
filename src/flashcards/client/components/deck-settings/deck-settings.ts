@@ -44,7 +44,9 @@ export class DeckSettings {
   }
   
   deleteDeck() {
-  	Decks.remove({_id: this.deck._id});
-  	this.router.navigate(['DeckList']);
+    if( confirm("Are you sure you want to delete this deck?") ) {
+      Decks.remove({_id: this.deck._id});
+      this.router.navigate(['DeckList']);
+    }
   }
 }
