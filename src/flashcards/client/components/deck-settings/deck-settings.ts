@@ -29,24 +29,22 @@ export class DeckSettings {
     });
   }
   
-  updateDeck(deck) {
+  updateDeck(d) {
     if (this.updateDeckForm.valid) {
-      Decks.update(
-      	this.deck, 
-      	{
-	      $set: {      
-    	    title: deck.title
-    	  }
-     	});
+      Decks.update({_id : this.deck._id}, {
+        $set: {
+          title: d.title
+        }
+      });
     }
   }
   
-  resetDeck() {
+  resetDeckForm() {
   	(<Control>this.updateDeckForm.controls['title']).updateValue(this.deck.title);
   }
   
   deleteDeck() {
-  	Decks.remove(this.deck);
-  	this.router.navigate(['/']);
+  	Decks.remove({_id: this.deck._id});
+  	this.router.navigate(['DeckList']);
   }
 }

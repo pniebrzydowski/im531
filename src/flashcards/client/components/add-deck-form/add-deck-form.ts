@@ -26,7 +26,7 @@ export class AddDeckForm {
   addDeck(deck) {
     if (this.addDeckForm.valid) {
       let newDeckId = Decks.insert({
-        name: deck.name,
+        title: deck.title,
         creator: Meteor.userId()
       });
  
