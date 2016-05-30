@@ -12,7 +12,7 @@ import {Decks} from '../../../collections/decks';
 @Component({
 	selector: 'word-list',
 	templateUrl: '/client/components/word-list/word-list.html',
-	styleUrls: ['/client/components/word-list/style.css'],
+	styleUrls: ['/client/components/word-list/style.less'],
 	directives: [AddWordForm,ImportDeck]
 })
 

@@ -9,7 +9,7 @@ import {Words} from '../../../collections/words';
 @Component({
 	selector: 'review-words',
 	styleUrls: [
-		'/client/components/review-words/style.css'],
+		'/client/components/review-words/style.less'],
 	templateUrl: '/client/components/review-words/review-words.html'
 })
 
