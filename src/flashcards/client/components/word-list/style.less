@@ -2,22 +2,19 @@
 
 word-list {
 	#deleteBtn {
-		background-color: @btn-negative;
-		color: @text-light;
-		border-color: @btn-negative;
+		.btn-action(@color-negative);
 		width: 32%;
 	}
 	
 	#importBtn {
-		background-color: @btn-neutral;
-		color: #fff;
+		.btn-action(@color-neutral);
 		width: 6em;
 		margin-top: 1em;
 	}
 	
 	.card {
-		background-color: @bg-light;
-		color: #898989;
+		background-color: @text-light;
+		color: @text-med;
 		height: 9em;
 		padding: 0.5em;
 		padding-top: 1.5em;
@@ -27,7 +24,7 @@ word-list {
 	}
 	
 	.card-overlay {
-		background: @bg-light;
+		background: @bg-dark;
 		padding: 0;
     
     button {

@@ -9,7 +9,7 @@ import {Decks} from '../../../collections/decks';
 @Component({
   selector: 'add-deck-form',
   templateUrl: '/client/components/add-deck-form/add-deck-form.html',
-  styleUrls: ['/client/components/deck-settings/style.css']
+  styleUrls: ['/client/components/add-deck-form/style.less']
 })
 
 export class AddDeckForm {

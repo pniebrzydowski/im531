@@ -10,7 +10,7 @@ import {Decks} from '../../../collections/decks';
 @Component({
   selector: 'deck-settings',
   templateUrl: '/client/components/deck-settings/deck-settings.html',
-  styleUrls: ['/client/components/deck-settings/style.css'],
+  styleUrls: ['/client/components/deck-settings/style.less'],
   directives: [WordList]
 })
 
