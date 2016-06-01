@@ -1,3 +1,5 @@
+@import "variables";
+
 .grid {
 	position: relative;
 	margin: 0 auto;
@@ -121,7 +123,7 @@
 	width: 100%;
 	height: 100%;
 	opacity: 0;
-	background: #1f1d1d;
+	background: @bg-dark;
 	-webkit-transition: opacity 0.6s;
 	transition: opacity 0.6s;
 }
@@ -202,14 +204,14 @@
 	padding: 0;
 	cursor: pointer;
 	vertical-align: top;
-	color: #6bd68a;
+	color: @text-action;
 	border: none;
 	background: none;
 }
 
 .action:hover,
 .action:focus {
-	color: #6bd68a;
+	color: @text-action;
 	outline: none;
 }
 
@@ -243,7 +245,7 @@
 }
 
 .button {
-	background: #2487d1;
+	background: @btn-action;
 	border-radius: 2em;
 	border: none;
 	color: #fff;
