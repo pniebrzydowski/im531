@@ -1,3 +1,5 @@
+@import "/client/lib/css/variables";
+
 review-words {
   .wrap {
   	margin-left: auto;
@@ -33,7 +35,7 @@ review-words {
   }
   
   .card-display {
-  	background-color: #e5e5e5;
+  	background-color: @bg-light;
   	width: 40%;
   	height: 20em;
   	margin: auto;
@@ -41,7 +43,7 @@ review-words {
   }
   
   #skipButton {
-  	color: #808080;
+  	color: @btn-neutral;
   	width: 10em;
   	padding: 15px 32px;
   	text-align: center;
@@ -50,16 +52,16 @@ review-words {
   	font-size: 16px;
   
   	background: rgba(0,0,0,0);
-  	border: solid 2px #808080;
+  	border: solid 2px @btn-neutral;
   }
   
   #skipButton:hover {
-  	background-color: #808080;
+  	background-color: @btn-neutral;
   	color: #ffffff;
   }
   
   #answerButton {
-  	color: #808080;
+  	color: @btn-neutral;
   	width: 10em;
   	padding: 15px 32px;
   	text-align: center;
@@ -67,16 +69,16 @@ review-words {
   	font-size: 16px;
   
   	background: rgba(0,0,0,0);
-  	border: solid 2px #808080;
+  	border: solid 2px @btn-neutral;
     
     &:hover {
-    	background-color: #808080;
+    	background-color: @btn-neutral;
     	color: #ffffff;
     }
   }
   
   #wrongButton {
-  	color: #FF093D;
+  	color: @btn-negative;
   	width: 10em;
   	padding: 15px 32px;
   	text-align: center;
@@ -85,16 +87,16 @@ review-words {
   	font-size: 16px;
   
   	background: rgba(0,0,0,0);
-  	border: solid 2px #FF093D;
+  	border: solid 2px @btn-negative;
     
     &:hover {
-    	background-color: #FF093D;
+    	background-color: @btn-negative;
     	color: #ffffff;
     }
   }
   
   #rightButton {
-  	color: #4CAF50;
+  	color: @btn-positive;
   	width: 10em;
   	padding: 15px 32px;
   	text-align: center;
@@ -103,16 +105,16 @@ review-words {
   	font-size: 16px;
   
   	background: rgba(0,0,0,0);
-  	border: solid 2px #4CAF50;
+  	border: solid 2px @btn-positive;
     
     &:hover {
-    	background-color: #4CAF50;
+    	background-color: @btn-positive;
     	color: #ffffff;
     }
   }
   
   #fullpage {
-    background-color: #1f1d1d;
+    background-color: @bg-dark;
     height: 100%;
   }
 }

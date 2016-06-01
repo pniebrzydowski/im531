@@ -1,20 +1,22 @@
+@import "/client/lib/css/variables";
+
 word-list {
 	#deleteBtn {
-		background-color: #ff3333;
-		color: #ededed;
-		border-color: #ff3333;
+		background-color: @btn-negative;
+		color: @text-light;
+		border-color: @btn-negative;
 		width: 32%;
 	}
 	
 	#importBtn {
-		background-color: #898989;
+		background-color: @btn-neutral;
 		color: #fff;
 		width: 6em;
 		margin-top: 1em;
 	}
 	
 	.card {
-		background-color: #f2f2f2;
+		background-color: @bg-light;
 		color: #898989;
 		height: 9em;
 		padding: 0.5em;
@@ -25,7 +27,7 @@ word-list {
 	}
 	
 	.card-overlay {
-		background: #1f1d1d;
+		background: @bg-light;
 		padding: 0;
     
     button {

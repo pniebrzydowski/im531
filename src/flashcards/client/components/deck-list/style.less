@@ -1,16 +1,16 @@
+@import "/client/lib/css/variables";
+
 deck-list {
-	color: #212121;
 	display: block;
-	font-family: "Avenir Next", Avenir, 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
 	padding-bottom: 30px;
   
   a {
-  	color: #777777;
+  	color: @text-light;
   	text-decoration: none;
   	
     &:hover,
     &:focus {
-    	color: #555555;
+    	color: @text-med;
     	-webkit-transition: 0.4s ease;
     	transition: 0.4s ease;
     }
@@ -47,7 +47,7 @@ deck-list {
   
     h2 {
     	display: block;
-    	color: #999;
+    	color: @text-med;
     	font-weight: normal;
     	font-size: 0.95em;
     	letter-spacing: 0;
@@ -65,7 +65,7 @@ deck-list {
     	margin: 0 0.5em;
   
       &.current-demo {
-      	color: #555555;
+      	color: @text-light;
       }
     }
   }
