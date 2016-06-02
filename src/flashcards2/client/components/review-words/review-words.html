@@ -1,0 +1,42 @@
+<a href="#">
+	<img class="close" src="/img/cross.png">
+</a>
+
+<!-- 
+<link rel="stylesheet" type="text/css" href="../jquery.fullPage.css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../jquery.fullPage.js"></script>
+-->
+
+<div id="fullpage">
+	<div class="section" id="section1" *ngIf="showReview">
+	    <div class="slide">
+			<div id="front" *ngIf="showFront">
+				<h1>{{currentWord.front}}</h1>
+				<div class="buttons">
+					<button type="button" id="answerButton"
+							(click)="showFront = false">Show</button>
+					<button type="button" id="skipButton"
+							(click)="moveToNextWord()">Skip</button>
+				</div>
+			</div>
+
+			<div id="back" *ngIf="!showFront">
+				<h1>{{currentWord.back}}</h1>
+				<div class="buttons">
+					<button type="button" id="wrongButton"
+							(click)="decreaseScore()">Wrong</button>
+					<button type="button" id="rightButton"
+							(click)="increaseScore()">Right</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="section" id="section2" *ngIf="showResults">
+		<h1>Your Results</h1>
+		<p>Total Words: {{results.total}}</p>
+		<p>Right: {{results.right}}</p>
+		<p>Wrong: {{results.wrong}}</p>
+	</div>
+</div>

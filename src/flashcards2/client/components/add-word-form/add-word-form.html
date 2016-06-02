@@ -1,0 +1,7 @@
+<form [ngFormModel]="addWordForm" #f="ngForm" (submit)="addWord(f.value)">
+  <label>Front</label>
+  <input type="text" ngControl="front" />
+  <label>Back</label>
+  <input type="text" ngControl="back" />
+  <button>Add</button>
+</form>

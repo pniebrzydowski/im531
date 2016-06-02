@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div class="col-xs-6 col-sm-2 col-md-1 col-md-offset-1 col-lg-1 col-lg-offset-2">
+      <h3>Cards</h3>
+    </div>
+    <div class="col-xs-6 col-sm-2">
+      <button type="button" class="btn btn-default" id="importBtn" (click)="openImport()">
+        <span class="glyphicon glyphicon-upload"></span> Import
+      </button>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<div class="row">
+  <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+    <div class="col-sm-4 col-md-3">
+      <div class="card" id="addCard" (click)="addNewCard()">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true" style="font-size:2em;"></span>
+        <p>Add a new card</p>
+      </div>
+    </div>
+
+    <div class="col-sm-4 col-md-3" *ngFor="#word of words">
+      <div class="card">
+        <p>{{word.front}}</p>
+        <hr>
+        <p>{{word.back}}</p>
+      </div>
+    </div>          
+  </div>
+</div>
+
+
+<add-word-form></add-word-form>

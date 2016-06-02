@@ -1,0 +1,12 @@
+<login-buttons></login-buttons>
+<header class="codrops-header">
+	<h1>Add New Deck</h1>
+</header>
+
+<form [ngFormModel]="addDeckForm" #f="ngForm" (ngSubmit)="addDeck(f.value)">
+  <label>Deck</label>
+  <input type="text" ngControl="name" />
+  <button type="submit">Create Deck</button>
+</form>
+
+<import-deck></import-deck>

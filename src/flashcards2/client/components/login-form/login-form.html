@@ -1,0 +1,37 @@
+<div class="form">
+	<div class="anki-logo">
+		<a href=""> <img src="/img/ankilogo-white.svg"
+			alt="anki-logo">
+		</a>
+	</div>
+
+	<div class="tab-content">
+		
+			<h1>Great to See You Again!</h1>
+
+			<form [ngFormModel]="loginForm" #f="ngForm" (submit)="login(f.value)">
+				<div class="field-wrap">
+				<input placeholder="Email"
+						type="text" ngControl="email" required autocomplete="off" />
+				</div>
+
+				<div class="field-wrap">
+				<input placeholder="Password"
+						type="password" ngControl="password" required autocomplete="off"  />
+				</div>
+
+				<p id="errorMessage"> </p>
+				
+
+				<button class="button button-block">
+				Log In
+				</button>
+
+				<p class="New User">
+					<a href="/signup"> <h1>Create account</h1></a>
+				</p>
+			</form>
+
+	</div>
+
+</div>
