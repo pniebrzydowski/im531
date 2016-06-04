@@ -5,71 +5,33 @@
 		</a>
 	</div>
 
-	<ul class="tab-group">
-		<li class="tab" [class.active]="currentTab == 'login'" id="tab-login">
-			<a (click)="setCurrentTab('login')">Log In</a></li>
-		<li class="tab" [class.active]="currentTab == 'signup'" id="tab-singup">
-			<a (click)="setCurrentTab('signup')">Sign Up</a></li>
-	</ul>
-
 	<div class="tab-content">
-		<div id="login" *ngIf="currentTab == 'login'">
+		
 			<h1>Great to See You Again!</h1>
 
-			<form> <!-- action="/" method="post"> -->
+			<form [ngFormModel]="loginForm" #f="ngForm" (submit)="login(f.value)">
 				<div class="field-wrap">
-					<label>Nickname<span class="req">*</span></label> <input
-						type="text" required autocomplete="off" />
+				<input placeholder="Email"
+						type="text" ngControl="email" required autocomplete="off" />
 				</div>
 
 				<div class="field-wrap">
-					<label>Password<span class="req">*</span></label> <input
-						type="password" required autocomplete="off" />
+				<input placeholder="Password"
+						type="password" ngControl="password" required autocomplete="off"  />
 				</div>
 
-				<p class="forgot">
-					<a href="#">Forgot password?</a>
-				</p>
+				<p id="errorMessage"> </p>
+				
 
 				<button class="button button-block">
 				Log In
 				</button>
+
+				<p class="New User">
+					<a href="/signup"> <h1>Create account</h1></a>
+				</p>
 			</form>
-		</div>
-		<!-- login ends -->
-
-		<div id="signup" *ngIf="currentTab == 'signup'">
-			<h1>Sign Up for Free</h1>
-
-			<form><!-- action="/" method="post"> -->
-				<div class="field-wrap">
-					<label>Nickname<span class="req">*</span></label> <input
-						type="text" required autocomplete="off" />
-				</div>
-
-				<div class="field-wrap">
-					<label>Email Address<span class="req">*</span></label> <input
-						type="email" required autocomplete="off" />
-				</div>
-
-				<div class="field-wrap">
-					<label>Password<span class="req">*</span></label> <input
-						type="password" required autocomplete="off" />
-				</div>
-
-				<div class="field-wrap">
-					<label>Confirm a Password<span class="req">*</span></label> <input
-						type="password" required autocomplete="off" />
-				</div>
-
-				<button type="submit" class="button button-block">
-				Let's Begin!
-				</button>
-			</form>
-		</div>
-		<!-- signup ends -->
 
 	</div>
-	<!-- tab-content ends -->
+
 </div>
-<!-- form ends -->
