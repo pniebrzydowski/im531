@@ -8,7 +8,7 @@
 	<form [ngFormModel]="importForm" #f="ngForm" (ngSubmit)="addWords()">
     <p class="button--view">
       <button type="submit" class="button">Add Words</button>
-      <button (click)="closeWindow()" class="button">Cancel</button>
+      <button type="button" (click)="closeWindow()" class="button">Cancel</button>
     </p>
 
     <div class="description description--preview">

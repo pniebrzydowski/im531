@@ -45,7 +45,7 @@ bootstrap(Flashcards, [ROUTER_PROVIDERS, provide(APP_BASE_HREF, { useValue: '/' 
 
 	Tracker.autorun(function(){
 if(Meteor.userId()==null && location.pathname!='/login' && location.pathname!='/signup' && !Meteor.userId()) {
-	    console.log('Oh yes');
+	    console.log('Go to Login');
 	    window.location.assign('/login');
 	  }
 	});

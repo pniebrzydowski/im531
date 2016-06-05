@@ -7,7 +7,7 @@
 	<form [ngFormModel]="addWordForm" #f="ngForm" (submit)="addWord(f.value)">
 		<p class="button--view">
 			<button type="submit" class="button">Add</button>
-			<button (click)="closeWindow()" class="button">Cancel</button>
+			<button type="button" (click)="closeWindow()" class="button">Cancel</button>
 		</p>
 	
 		<div class="description description--preview">
