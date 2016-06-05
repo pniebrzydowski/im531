@@ -19,7 +19,7 @@ import {ReviewWords} from './components/review-words/review-words';
 })
 
 @RouteConfig([
-	{ path: '/decks', as: 'DeckList', component: DeckList },
+	{ path: '/', as: 'DeckList', component: DeckList },
 	{ path: '/login', as: 'LoginForm', component: LoginForm },
 	{ path: '/signup', as: 'SignupForm', component: SignupForm },
 	{ path: '/create', as: 'AddDeckForm', component: AddDeckForm },

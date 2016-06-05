@@ -8,7 +8,7 @@ import {Router} from 'angular2/router';
 @Component({
   selector: 'login-form',
   styleUrls: [
-  	'/client/components/login-form/style.css'],
+  	'/client/components/login-form/style.less'],
   templateUrl: '/client/components/login-form/login-form.html'
 })
 
