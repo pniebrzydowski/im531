@@ -1,44 +1,89 @@
 <div id="fullpage">
   <div class="section" id="section1">
-    <a href="/">
-      <img class="close" src="/img/cross.png">
-    </a>
-    
-	  <div class="slide" *ngFor="#word of reviewWords">
-			<div class="card-display" *ngIf="showFront">
-				<h2>{{word.front}}</h2>
-				<div class="buttons">
-          <button type="button" id="skipButton"
-              (click)="skipWord()">Skip</button>
-					<button type="button" id="answerButton"
-							(click)="showFront = false">Show</button>
-				</div>
-			</div>
 
-			<div class="card-display" *ngIf="!showFront">
-				<h2>{{word.back}}</h2>
-				<div class="buttons">
-					<button type="button" id="wrongButton"
-							(click)="decreaseScore(word)">Wrong</button>
-					<button type="button" id="rightButton"
-							(click)="increaseScore(word)">Right</button>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-1 col-xs-offset-9 col-sm-offset-11 col-md-offset-11 col-lg-offset-11">
+          <a href="/">
+            <img src="/img/cross.svg" class="cross">
+          </a>
+        </div>
+      </div>
+    </div>
 
-	<div class="section" id="section2">
-    <a href="/">
-      <img class="close" src="/img/cross.png">
-    </a>
-	  <div class="slide">
-      <div class="card-display">
-		  <h2>Your Results</h2>
-				<p>Total Words: {{results.total}}</p>
-				<p>Right: {{results.right}}</p>
-				<p>Wrong: {{results.wrong}}</p>
-				<p>Skipped: {{results.skipped}}</p>
-			</div>
-		</div>
-	</div>
+    <div class="slide" *ngFor="#word of reviewWords">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="card-display" *ngIf="showFront">
+              <div class="row">
+                  <h2>{{word.front}}</h2>
+                <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+                  <button class="btn btn-default btn-round" type="button" id="skipButton"
+                      (click)="skipWord()">Skip</button>
+                  <button class="btn btn-default btn-round" type="button" id="answerButton"
+                      (click)="showFront = false">Show</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-display" *ngIf="!showFront">
+              <div class="row">
+                <h2>{{word.back}}</h2>
+                <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+                  <button class="btn btn-default btn-round" type="button" id="wrongButton"
+                      (click)="decreaseScore(word)">Wrong</button>
+                  <button class="btn btn-default btn-round" type="button" id="rightButton"
+                      (click)="increaseScore(word)">Right</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="section2">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-1 col-xs-offset-9 col-sm-offset-11 col-md-offset-11 col-lg-offset-11">
+          <a href="/">
+            <img src="/img/cross.svg" class="cross">
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="card-display">
+              <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                  <h2>You've finished the deck! Here are your results</h2>
+                </div>
+                <div class="col-sm-12 results">
+                  <p>Total Words: {{results.total}}</p>
+                  <p>Right: {{results.right}}</p>
+                  <p>Wrong: {{results.wrong}}</p>
+                  <p>Skipped: {{results.skipped}}</p>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+                  <!-- TODO: add play again button
+                  <button class="btn btn-default btn-round" type="button" id="playButton">Play Again</button>
+                   -->
+                  <a class="btn btn-default btn-round" id="quitButton" href="/">
+                    Quit
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

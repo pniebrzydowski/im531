@@ -1,81 +1,74 @@
 @import "/client/lib/css/variables";
 
-.btn-card-action(@btn-color) {
-  background-color: transparent;
-  border: 2px solid @btn-color;
-  color: @btn-color;
-  width: 10em;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  
-  &:hover {
-    background-color: @btn-color;
-    color: #ffffff;
-  }
-}
-
 review-words {
-  .wrap {
-  	margin-left: auto;
-  	margin-right: auto;
-  	width: 960px;
-  	position: relative;
+  .wrap{
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;
+    position: relative;
   }
   
   h2 {
-  	font-size: 2em;
-  	margin: 2em auto;
+    font-size: 2em;
+    margin-bottom: 4em;
+    color: #212121;
+  }
+  
+  #section2 h2 {
+    font-family: 'Roboto Slab', sans-serif;
   }
   
   p {
-  	font-size: 1.5em;
-  }
-  
-  .intro p {
-  	width: 50%;
-  	margin: 0 auto;
+    font-size: 1.5em;
   }
   
   .section {
-  	clear: both;
-  	text-align:center;
+    clear: both;
+    text-align:center;
   }
   
-  div.fp-controlArrow {
-    &.fp-prev,
-    &.fp-next {
-    	display: none;
-    }
-  }
-  
-  .card-display {
-  	background-color: @bg-light;
-  	width: 40%;
-  	height: 20em;
-  	margin: auto;
-  	padding: 2em;
-  }
-  
-  #skipButton {
-  	.btn-card-action(@color-neutral);
-  }
-  
-  #answerButton {
-    .btn-card-action(@color-neutral);
-  }
-  
-  #wrongButton {
-    .btn-card-action(@color-negative);
-  }
-  
-  #rightButton {
-    .btn-card-action(@color-positive);
+  div.fp-controlArrow.fp-prev,
+  div.fp-controlArrow.fp-next {
+    display: none;
   }
   
   #fullpage {
-    background-color: @bg-dark;
+    background-color: #e5e5e5;
     height: 100%;
   }
+  
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .btn-round{
+    border-radius: 17px;
+  }
+  
+  #answerButton, #skipButton, #playButton, #quitButton {
+    .btn-action(@color-action);
+    width: 40%;
+  }
+  
+  #wrongButton {
+    .btn-action(@color-negative);
+    width: 40%;
+  }
+  
+  #rightButton {
+    .btn-action(@color-positive);
+    width: 40%;
+  }
+  
+  .cross {
+    width: 3.5em;
+    margin-top: 1em;
+    margin-left: 1em;
+  }
+  
+  .results {
+    margin-bottom: 4em;
+  }
+
 }
