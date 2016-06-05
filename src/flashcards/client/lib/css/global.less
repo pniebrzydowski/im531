@@ -1,4 +1,7 @@
 @import "variables";
+@import url(https://fonts.googleapis.com/css?family=Roboto:400);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
+@import url(https://fonts.googleapis.com/css?family=EB+Garamond);
 
 *, *:before, *:after {
   	-webkit-box-sizing: border-box;
@@ -15,14 +18,29 @@
 	clear: both;
 }
 
-html {
-	overflow-y: scroll;
-	height: 100%;
+html,
+body {
+  color: #ffffff;
+  font-size: 15px;
+  height: 100%;
+}
+
+hr {
+  margin: 0;
+  padding: 0;
 }
 
 body {
 	background: @bg-light;
 	color: @text-dark;
-  font-family: "Avenir Next", Avenir, 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', serif;
 	height: 100%;
+}
+
+a {
+  color: @text-dark;
+  
+  &:hover {
+    text-decoration: none;
+  }
 }

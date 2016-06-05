@@ -9,6 +9,7 @@ import {ErrorPage} from './components/error-page/error-page';
 import {SignupForm} from './components/signup-form/signup-form';
 import {DeckList} from './components/deck-list/deck-list';
 import {AddDeckForm} from './components/add-deck-form/add-deck-form';
+import {DeckPreview} from './components/deck-preview/deck-preview';
 import {DeckSettings} from './components/deck-settings/deck-settings';
 import {ReviewWords} from './components/review-words/review-words';
  
@@ -24,6 +25,7 @@ import {ReviewWords} from './components/review-words/review-words';
 	{ path: '/signup', as: 'SignupForm', component: SignupForm },
 	{ path: '/create', as: 'AddDeckForm', component: AddDeckForm },
 	{ path: '/deck/:deckId', as: 'DeckSettings', component: DeckSettings },
+  { path: '/preview/:deckId', as: 'DeckPreview', component: DeckPreview },
 	{ path: '/review/:deckId', as: 'ReviewWords', component: ReviewWords },
 	{ path: '/*path', as: 'ErrorPage', component: ErrorPage }
 

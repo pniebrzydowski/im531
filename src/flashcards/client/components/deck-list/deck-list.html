@@ -1,63 +1,80 @@
-<login-buttons></login-buttons>
-<!-- <p>
-	<button id="trigger-overlay" class="menu-button" type="button">
-		Menu
-	</button>
-</p> -->
-
-<div class="container">
-	<header class="codrops-header">		
-		<!-- <nav class="codrops-demos">
-			<a class="current-demo" href="#">Home</a>
-			<a href="#">Library</a>
-		</nav> -->
-		<h1>My Decks</h1>
-		<h2>From here you can find all the decks you have either created yourself or saved from
-		the public decks</h2>
-		<a href="/create" class="button">Create New Deck</a>
-	</header>
-	
-	<div class="content">
-		<div class="grid clearfix">
-			<div class="grid__item" data-size="700x800" *ngFor="#deck of decks">
-				<div (click)="preview(deck)" class="img-wrap">
-					<img src="/img/sample.jpg" alt="sample img" />
-					<div class="description description--grid">
-						<h3>{{deck.title}}</h3>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		<!-- Play Menu -->
-		<div class="preview" 
-			[ngClass] = "{'preview--open': previewDeck != false,
-						 'preview--image-loaded': previewDeck != false}">
-			<button (click)="closePreview()" class="action action--close">
-				<span class="text-hidden">Close</span>
+<nav class="navbar navbar-fixed-top home-navbar">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target="#myNavbar">
+				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
 			</button>
-			
-			<p class="button--view">
-				<a [routerLink]="['/DeckSettings', {deckId: previewDeck._id}]"
-					  class="button">Edit</a>
-				<a [routerLink]="['/ReviewWords', {deckId: previewDeck._id}]"
-				    class="button">Play the Deck</a>
-				<a (click)="remove(previewDeck)"
-            class="button">Delete</a>
-			</p>
-
-			<div class="description description--preview">
-				<h3>{{previewDeck.title}}</h3>
-			</div>
-			<!--<div class="collage">
-				<img src="img/collage/dummies/1.jpg" alt="img01" />
-				<img src="img/collage/dummies/2.jpg" alt="img02" />
-				<img src="img/collage/dummies/3.jpg" alt="img03" />
-				<img src="img/collage/dummies/4.jpg" alt="img04" />
-			</div>-->
+			<a class="navbar-brand" href="/"> <img
+				src="img/ankilogo-white.svg" alt="anki-logo"
+				class="pull-left anki-logo">
+			</a>
 		</div>
-		<!-- /preview -->
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<!-- <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="library.html">Library</a></li>
+      </ul> -->
+			<ul class="nav navbar-nav navbar-right">
+				<li><login-buttons></login-buttons> <!-- <a href="#"><img src="img/logout-white.svg"
+            class="logout-icon"> Log Out</a> --></li>
+			</ul>
+		</div>
 	</div>
-	<!-- /content -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+
+	<!-- My Decks -->
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="col-title">Welcome Home!</div>
+			<div class="col-info">
+				Would you like to play your favorite deck again? Or did you just
+				learn something so magnificent you just need to share it with
+				everyone? On this page you can do both. See the decks you have
+				created yourself below.
+				<!-- together with the decks
+        saved from the Library. -->
+			</div>
+		</div>
+
+		<div class="col-lg-12">
+			<div class="col-name">
+				My Decks
+				<a class="button add-button" href="/create">
+					<img src="/img/plus.svg" alt="plus" class="plus"> Add
+				</a>
+			</div>
+		</div>
+
+		<!-- Card -->
+		<div class="col-lg-15 col-md-3 col-sm-4 col-xs-6"
+		      *ngFor="#deck of decks">
+			<div class="panel panel-default card-wrapper">
+				<!-- link to preview -->
+				<a [routerLink]="['/DeckPreview', {deckId: deck._id}]">
+					<div class="panel-body card-content">
+						<img src="/img/deck-icon.svg" alt="cg" class="cg-icon">
+						<div class="cg-text">Uncategorized</div>
+            <hr>
+						<div class="deck-name">{{deck.title}}</div>
+					</div>
+				</a>
+			</div>
+		</div>
+
+	</div>
+	<!-- Row ends -->
+
+	<!-- Footer -->
+	<footer>
+		<div class="row">
+			<div class="col-lg-12">
+				<p>Copyright &copy; Anki Flashcards 2016</p>
+			</div>
+		</div>
+	</footer>
 </div>
-<!-- /container -->

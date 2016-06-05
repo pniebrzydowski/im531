@@ -1,0 +1,66 @@
+<div class="container">
+  <!-- Close -->
+  <div class="row">
+    <div class="col-xl-12">
+      <a class="preview-close" href="/">
+        <img src="/img/cross-white.svg" class="push-right close-icon">
+      </a>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="row">
+    <div class="col-xl-12">
+      <div class="preview-header">
+        <div class="deck-name">{{deck.title}}</div>
+        <div class="button-wrapper">
+          <a [routerLink]="['/DeckSettings', {deckId: deck._id}]"
+            class="button edit-button">Edit</a>
+          <a [routerLink]="['/ReviewWords', {deckId: deck._id}]"
+            class="button play-button">Play</a>
+        </div>
+        <!-- <div class="deck-rating">
+          <div class="star-wrapper">
+            <img src="img/star-white-filled.svg" class="star star-filled">
+            <img src="img/star-white-filled.svg" class="star star-filled">
+            <img src="img/star-white.svg" class="star star-empty"> <img
+              src="img/star-white.svg" class="star star-empty"> <img
+              src="img/star-white.svg" class="star star-empty">
+          </div>
+          <div>Rate the deck</div>
+        </div> -->
+      </div>
+    </div>
+
+    <div class="row preview-content">
+      <div class="deck-info col-xl-12 col-md-6">
+        <div class="info-title">Deck Information</div>
+        <div class="info-content">
+          <div class="info-cards">
+            <div>
+              Amount of Cards<span class="preview-input card-amount">{{words.length}}</span>
+            </div>
+          </div>
+          <div class="info-photos">
+            <div>
+              Use of Photos<span class="preview-input photo-use">No</span>
+            </div>
+          </div>
+          <div class="info-audio">
+            <div>
+              Use of Audio<span class="preview-input audio-use">No</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="game-sets col-xl-12 col-md-6">
+        <div class="sets-title">Game Settings</div>
+        <div class="info-cards">---</div>
+        <div class="info-photos"></div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+<!-- /.container -->

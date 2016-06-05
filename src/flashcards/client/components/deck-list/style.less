@@ -1,98 +1,261 @@
 @import "/client/lib/css/variables";
 
 deck-list {
-	display: block;
-	padding-bottom: 30px;
-  
-  a {
-  	color: @text-light;
-  	text-decoration: none;
-  	
-    &:hover,
-    &:focus {
-    	color: @text-med;
-    	-webkit-transition: 0.4s ease;
-    	transition: 0.4s ease;
-    }
+  /* Five col grid */
+  .col-xs-15,
+  .col-sm-15,
+  .col-md-15,
+  .col-lg-15 {
+      position: relative;
+      min-height: 1px;
+      padding-right: 10px;
+      padding-left: 10px;
   }
-  
-  button:focus {
-  	outline: none;
+  .col-xs-15 {
+      width: 20%;
+      float: left;
   }
-  
-  .hidden {
-  	position: absolute;
-  	overflow: hidden;
-  	width: 0;
-  	height: 0;
-  	pointer-events: none;
-  }
-  
-  
-  /* Header */
-  
-  .menu-button {
-  	position: fixed;
-  	right: 2em;
-  }
-  
-  .codrops-header {
-  	padding: 2em;
-  	text-align: center;
-    h1 {
-    	font-size: 2.5em;
-    	line-height: 1;
-    	font-weight: normal;
-    }
-  
-    h2 {
-    	display: block;
-    	color: @text-med;
-    	font-weight: normal;
-    	font-size: 0.95em;
-    	letter-spacing: 0;
-    	margin: 0 0 1.25em 0;
-    }
-  }
-  
-  /* Demo links */
-  
-  .codrops-demos {
-  	margin: 2em 0 0;
-  
-    a {
-    	display: inline-block;
-    	margin: 0 0.5em;
-  
-      &.current-demo {
-      	color: @text-light;
+  @media (min-width: 768px) {
+    .col-sm-15 {
+          width: 20%;
+          float: left;
       }
+  }
+  @media (min-width: 992px) {
+      .col-md-15 {
+          width: 20%;
+          float: left;
+      }
+  }
+  @media (min-width: 1200px) {
+      .col-lg-15 {
+          width: 20%;
+          float: left;
+      }
+  }
+  
+  /* Invisible scrollbar */
+  ::-webkit-scrollbar {
+      width: 0px;
+      background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+      background: #FF0000;
+  }
+  
+  .col-title,
+  .col-name {
+    font-family: 'Roboto Slab', serif;
+  }
+  .col-title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 2.3rem;
+    padding: 1.2rem 0;
+  }
+  .col-name {
+    padding-bottom: 1rem;
+    padding-top: 0.75rem;
+    font-size: 1.6rem;
+  }
+  .col-info {
+    font-family: 'EB Garamond', serif;
+    color: #5b5b5b;
+    margin-bottom: 30px;
+    padding: 0 20%;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    text-align: center;
+  }
+  .add-button {
+    background: transparent;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    text-shadow: none;
+    border: 2px solid #3a3a3a;
+    color: #3a3a3a;
+    outline: none;
+    border-radius: 3px;
+    padding: 5px 8px;
+    margin-left: 5px;
+    font-size: 1.3rem;
+    
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .plus {
+    width: 18px;
+    padding-bottom: 4px;
+  }
+  .container {
+    padding-top: 90px;
+    width: 90%;
+  }
+  
+  /* Navigation */
+  
+  .home-navbar {
+    background: rgba(75, 214, 193, 0.95); /* #4bd6c1 */
+    border: none;
+  }
+  
+  #myNavbar a {
+    color: white;
+    background-color: none;
+  }
+  
+  #myNavbar li a:hover , #myNavbar li a:visited {
+    background-color: #4bd6c1;
+    box-shadow: 0 1px 15px rgba(0, 0, 0, 0.3);
+    transition: background-color .5s ease, box-shadow .5s ease;
+  }
+  
+  .navbar-nav>.active>a:hover, .navbar-nav>.active>a:focus {
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.2);
+    transition: background-color .5s ease, box-shadow .5s ease;
+  }
+  
+  .navbar-nav>.active>a, .navbar-nav>.active>a:visited {
+    background-color: #4bd6c1;
+    box-shadow: 2px 0 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .navbar-toggle {
+    border: none;
+    background: transparent;
+  }
+  
+  .icon-bar {
+    background: #ffffff;
+    padding: 0;
+    margin: 6px;
+    margin-top: 8px;
+  }
+  
+  .navbar-header {
+    padding-bottom: 4px;
+  }
+  
+  .navbar-nav li a {
+    line-height: 40px;
+  }
+  
+  .navbar-collapse {
+    border: none;
+  }
+  
+  .logout-icon {
+    height: 25px;
+  }
+  
+  .anki-logo {
+    height: 40px;
+  }
+  
+  /* Cards */
+  
+  .card-wrapper {
+    border: 0;
+    text-align: center;
+    padding: 0;
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+  }
+  .card-wrapper a, .card-wrapper a:hover, .card-wrapper a:focus, .card-wrapper a:visited {
+    text-decoration: none;
+    color: #3a3a3a;
+  }
+  .cg-icon {
+    width: 30%;
+  }
+  .cg-text {
+    padding: 8px;
+  }
+  .deck-name {
+    padding: 8px;
+    font-size: 1.15rem;
+  }
+  footer {
+      padding-top: 3%;
+    text-align: center;
+    color: #bbb;
+  }
+  
+  /* Responsive Styles */
+  
+  @media(max-width:991px) {
+    .col-title {
+      font-size: 1.8rem;
+      padding: 0.9rem 0;
+    }
+    .col-name, .col-info {
+      font-size: 1.4rem;
+    }
+    .col-info {
+      line-height: 1.85rem;
+    }
+    .add-button {
+      padding: 4px 7px;
+      font-size: 1.2rem;
+    }
+    .plus {
+      width: 16px;
+      padding-bottom: 4px;
+    } 
+  }
+  
+  @media(max-width:767px) {
+    .col-title {
+      font-size: 1.4rem;
+    }
+    .col-name, .col-info {
+      font-size: 1.2rem;
+    }
+    .col-info {
+      padding: 0 10%;
+      line-height: 1.65rem;
+    }
+    .add-button {
+      border: 1px solid #3a3a3a;
+      font-size: 1rem;
+    }
+    .plus {
+      width: 13px;
     }
   }
   
-  /* Content */
-  
-  .content {
-  	padding: 1em 0 3em;
-  	max-width: 1080px;
-  	margin: 0 auto;
-  }
-  
-  form {
-  	text-align: center;
-  }
-  
-  /* Demo ad style */
-  
-  @media screen and (max-width: 50em) {
-  	.codrops-header {
-  		padding: 2em 5%;
-  	}
-  }
-  
-  @media screen and (max-width: 40em) {
-  	.codrops-header h1 {
-  		font-size: 0.817em;
-  	}
+  @media(max-width:480px) {
+    .col-title {
+      font-size: 1.2rem;
+    }
+    .col-name {
+      font-size: 1rem;
+    }
+    .col-info {
+      padding: 0;
+      line-height: 1.5rem;
+      font-size: 1.1rem
+    }
+    .card-wrapper {
+      height: 170px;
+      width: 170px;
+    }
+    body {
+      font-size: 0.85rem;
+    }
+    .deck-name {
+      font-size: 0.95rem;
+    }
+    .add-button {
+      padding: 4px 7px;
+      font-size: 0.9rem;
+    }
+    .plus {
+      width: 10px;
+      padding-bottom: 3px;
+    }
   }
 }
