@@ -1,7 +1,44 @@
-<div>
-  <p>
-    {{currentWord.name}}
-  </p>
-  <button (click)="decreaseScore(currentWord)">Incorrect</button>
-  <button (click)="increaseScore(currentWord)">Correct</button>
+<div id="fullpage">
+  <div class="section" id="section1">
+    <a href="/">
+      <img class="close" src="/img/cross.png">
+    </a>
+    
+	  <div class="slide" *ngFor="#word of reviewWords">
+			<div class="card-display" *ngIf="showFront">
+				<h2>{{word.front}}</h2>
+				<div class="buttons">
+          <button type="button" id="skipButton"
+              (click)="skipWord()">Skip</button>
+					<button type="button" id="answerButton"
+							(click)="showFront = false">Show</button>
+				</div>
+			</div>
+
+			<div class="card-display" *ngIf="!showFront">
+				<h2>{{word.back}}</h2>
+				<div class="buttons">
+					<button type="button" id="wrongButton"
+							(click)="decreaseScore(word)">Wrong</button>
+					<button type="button" id="rightButton"
+							(click)="increaseScore(word)">Right</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="section" id="section2">
+    <a href="/">
+      <img class="close" src="/img/cross.png">
+    </a>
+	  <div class="slide">
+      <div class="card-display">
+		  <h2>Your Results</h2>
+				<p>Total Words: {{results.total}}</p>
+				<p>Right: {{results.right}}</p>
+				<p>Wrong: {{results.wrong}}</p>
+				<p>Skipped: {{results.skipped}}</p>
+			</div>
+		</div>
+	</div>
 </div>

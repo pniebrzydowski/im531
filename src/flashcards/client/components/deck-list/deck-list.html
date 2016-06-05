@@ -1,0 +1,63 @@
+<login-buttons></login-buttons>
+<!-- <p>
+	<button id="trigger-overlay" class="menu-button" type="button">
+		Menu
+	</button>
+</p> -->
+
+<div class="container">
+	<header class="codrops-header">		
+		<!-- <nav class="codrops-demos">
+			<a class="current-demo" href="#">Home</a>
+			<a href="#">Library</a>
+		</nav> -->
+		<h1>My Decks</h1>
+		<h2>From here you can find all the decks you have either created yourself or saved from
+		the public decks</h2>
+		<a href="/create" class="button">Create New Deck</a>
+	</header>
+	
+	<div class="content">
+		<div class="grid clearfix">
+			<div class="grid__item" data-size="700x800" *ngFor="#deck of decks">
+				<div (click)="preview(deck)" class="img-wrap">
+					<img src="/img/sample.jpg" alt="sample img" />
+					<div class="description description--grid">
+						<h3>{{deck.title}}</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Play Menu -->
+		<div class="preview" 
+			[ngClass] = "{'preview--open': previewDeck != false,
+						 'preview--image-loaded': previewDeck != false}">
+			<button (click)="closePreview()" class="action action--close">
+				<span class="text-hidden">Close</span>
+			</button>
+			
+			<p class="button--view">
+				<a [routerLink]="['/DeckSettings', {deckId: previewDeck._id}]"
+					  class="button">Edit</a>
+				<a [routerLink]="['/ReviewWords', {deckId: previewDeck._id}]"
+				    class="button">Play the Deck</a>
+				<a (click)="remove(previewDeck)"
+            class="button">Delete</a>
+			</p>
+
+			<div class="description description--preview">
+				<h3>{{previewDeck.title}}</h3>
+			</div>
+			<!--<div class="collage">
+				<img src="img/collage/dummies/1.jpg" alt="img01" />
+				<img src="img/collage/dummies/2.jpg" alt="img02" />
+				<img src="img/collage/dummies/3.jpg" alt="img03" />
+				<img src="img/collage/dummies/4.jpg" alt="img04" />
+			</div>-->
+		</div>
+		<!-- /preview -->
+	</div>
+	<!-- /content -->
+</div>
+<!-- /container -->

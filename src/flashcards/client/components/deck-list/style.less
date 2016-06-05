@@ -1,0 +1,98 @@
+@import "/client/lib/css/variables";
+
+deck-list {
+	display: block;
+	padding-bottom: 30px;
+  
+  a {
+  	color: @text-light;
+  	text-decoration: none;
+  	
+    &:hover,
+    &:focus {
+    	color: @text-med;
+    	-webkit-transition: 0.4s ease;
+    	transition: 0.4s ease;
+    }
+  }
+  
+  button:focus {
+  	outline: none;
+  }
+  
+  .hidden {
+  	position: absolute;
+  	overflow: hidden;
+  	width: 0;
+  	height: 0;
+  	pointer-events: none;
+  }
+  
+  
+  /* Header */
+  
+  .menu-button {
+  	position: fixed;
+  	right: 2em;
+  }
+  
+  .codrops-header {
+  	padding: 2em;
+  	text-align: center;
+    h1 {
+    	font-size: 2.5em;
+    	line-height: 1;
+    	font-weight: normal;
+    }
+  
+    h2 {
+    	display: block;
+    	color: @text-med;
+    	font-weight: normal;
+    	font-size: 0.95em;
+    	letter-spacing: 0;
+    	margin: 0 0 1.25em 0;
+    }
+  }
+  
+  /* Demo links */
+  
+  .codrops-demos {
+  	margin: 2em 0 0;
+  
+    a {
+    	display: inline-block;
+    	margin: 0 0.5em;
+  
+      &.current-demo {
+      	color: @text-light;
+      }
+    }
+  }
+  
+  /* Content */
+  
+  .content {
+  	padding: 1em 0 3em;
+  	max-width: 1080px;
+  	margin: 0 auto;
+  }
+  
+  form {
+  	text-align: center;
+  }
+  
+  /* Demo ad style */
+  
+  @media screen and (max-width: 50em) {
+  	.codrops-header {
+  		padding: 2em 5%;
+  	}
+  }
+  
+  @media screen and (max-width: 40em) {
+  	.codrops-header h1 {
+  		font-size: 0.817em;
+  	}
+  }
+}

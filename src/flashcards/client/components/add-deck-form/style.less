@@ -1,0 +1,48 @@
+@import "/client/lib/css/variables";
+
+add-deck-form {
+  .container {
+  	margin-left: auto;
+  	margin-right: auto;
+  }
+  
+  .btn-round {
+    border-radius: 17px;
+  }
+  .btn-round-sm {
+    border-radius: 15px;
+  }
+  .btn-round-xs {
+  	border-radius: 11px;
+  	padding-left: 10px;
+  	padding-right: 10px;
+  }
+  .btn-round-lg{
+    border-radius: 22.5px;
+  }
+  
+  .form-control {
+  	border-radius: 17px;
+  	background-color: transparent;
+  }
+  
+  #saveBtn {
+    .btn-action(@color-action);
+    width: 32%;
+  }
+  
+  #cancelBtn {
+  	.btn-action(@color-neutral);
+    width: 32%;
+  }
+  
+  #deleteBtn {
+  	.btn-action(@color-negative);
+    width: 32%;
+  }
+  
+  h1 {
+  	margin-top: 1em;
+  	margin-bottom: 2em;
+  }
+}

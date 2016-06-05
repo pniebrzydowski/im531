@@ -1,0 +1,40 @@
+<div class="form">
+	<div class="anki-logo">
+		<a href=""> <img src="/img/ankilogo-white.svg"
+			alt="anki-logo">
+		</a>
+	</div>
+
+	<div class="tab-content">
+			<h1>Sign Up for Free</h1>
+
+			<form [ngFormModel]="SignupForm" #f="ngForm" (submit)="signup(f.value)">
+
+				<div class="field-wrap">
+					<input placeholder="Email"
+						type="email" ngControl="email" required autocomplete="off" />
+				</div>
+
+				<div class="field-wrap">
+					<input placeholder="Password"
+						type="password" ngControl="password" required autocomplete="off" />
+				</div>
+
+				<div class="field-wrap">
+					<input placeholder="Confirm Password"
+						type="password" ngControl="password2" required autocomplete="off" />
+				</div>
+
+				<p id="errorMessage"> </p>
+				
+				<button type="submit" class="button button-block">
+				Let's Begin!
+				</button>
+			</form>
+
+
+
+
+	</div>
+
+</div>
