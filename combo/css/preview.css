@@ -1,0 +1,138 @@
+/* Fonts */
+@import url(https://fonts.googleapis.com/css?family=Roboto:400);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
+@import url(https://fonts.googleapis.com/css?family=EB+Garamond);
+
+/* Invisible scrollbar */
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+
+/* Global Styles */
+html,
+body {
+    height: 100%;
+	font-size: 15px;
+	color: #ffffff;
+}
+body {
+    padding: 3% 0 0 0;
+	background: #3a3a3a;
+	font-family: 'Roboto', serif;
+}
+hr {
+	margin: 0;
+	padding: 0;
+}
+.preview-header {
+	text-align: center;
+}
+.deck-name {
+	font-weight: 700;
+	font-size: 2.3rem;
+	padding-bottom: 20px;
+	font-family: 'Roboto Slab', serif;
+}
+.button {
+	font-family: 'Roboto Slab', serif;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	text-shadow: none;
+	border: none;
+	outline: none;
+	border-radius: 300px;
+	padding: 15px 35px;
+	font-size: 1.6rem;
+	margin: 5px;
+}
+.play-button {
+	background: #4bd6c1;
+}
+.edit-button {
+	background: #555;
+}
+.deck-rating {
+	font-size: 1rem;
+	padding-top: 12px;
+}
+.star-wrapper {
+	padding-bottom: 6px;
+}
+.star {
+	width: 30px;
+}
+.preview-content {
+	max-width: 45%;
+	margin: 0 auto;
+	padding-top: 20px;
+}
+.deck-info, .game-sets {
+	font-family: 'Roboto Slab', serif;
+	font-size: 1.3rem;
+	text-align: center;
+	padding: 8px 15px;
+}
+.info-content {
+	font-family: 'Roboto', serif;
+	font-size: 1rem;
+	text-align: left;
+	padding-top: 10px;
+	line-height: 1.7rem;
+}
+.preview-input {
+	font-weight: bold;
+	float: right;
+	color: #4bd6c1;
+}
+.close-icon {
+	height: 30px;
+	color: white;
+	float: right;
+	margin-bottom: 3%;
+}
+
+/* Responsive Styles */
+
+@media(max-width:991px) {
+	.deck-name {
+		font-size: 2rem;
+	}
+	.button {
+		padding: 13px 32px;
+		font-size: 1.4rem;
+	}
+}
+
+@media(max-width:767px) {
+	.deck-name {
+		font-size: 1.8rem;
+	}
+	.button {
+		padding: 12px 30px;
+		font-size: 1.3rem;
+	}
+	.preview-content {
+		max-width: 55%;
+	}
+}
+
+@media(max-width:480px) {
+	.deck-name {
+		font-size: 1.4rem;
+	}
+	.button {
+		padding: 12px 30px;
+		font-size: 1.2rem;
+	}
+	.star {
+		width: 37px;
+	}
+	.preview-content {
+		max-width: 95%;
+	}
+}
