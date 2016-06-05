@@ -7,27 +7,43 @@ word-list {
 	}
 	
 	#importBtn {
-		.btn-action(@color-neutral);
+		font-family: 'Roboto Slab', sans-serif;
+    background: transparent;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    text-shadow: none;
+    border: 1px solid #ededed;
+    outline: none;
+    border-radius: 3px;
+    padding: 5px 8px;
+    margin-top: 0.75em;
+    font-size: 1.3em;
+		
 		width: 6em;
 		margin-top: 1em;
 	}
 	
 	.card {
-		background-color: @text-light;
-		color: @text-med;
-		height: 9em;
-		padding: 0.5em;
-		padding-top: 1.5em;
-		position: relative;
-		text-align: center;
-		margin-bottom: 2em;
-	}
+    background-color: @bg-light;
+    color: @text-med;
+    height: 12em;
+    padding: 0.5em;
+    padding-top: 3em;
+    text-align: center;
+    margin-bottom: 2em;
+  }
+  
+  #addCard {
+    padding-top: 4em;
+  }
 	
 	.card-overlay {
 		background: @bg-dark;
 		padding: 0;
     
     button {
+      .btn-action(@color-negative);
 		  margin: 3em 0;
     }
 	}
@@ -41,4 +57,14 @@ word-list {
 		background-color: #000;
 		border-color: inherit;
 	}
+	
+	.plus {
+    width: 25px;
+    padding-bottom: 4px;
+  }
+  
+  .plus2 {
+    width: 30px;
+    padding-bottom: 10px;
+  }
 }
