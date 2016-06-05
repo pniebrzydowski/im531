@@ -1,0 +1,232 @@
+/* Fonts */
+@import url(https://fonts.googleapis.com/css?family=Roboto:400);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
+@import url(https://fonts.googleapis.com/css?family=EB+Garamond);
+
+/* Five col grid */
+.col-xs-15,
+.col-sm-15,
+.col-md-15,
+.col-lg-15 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.col-xs-15 {
+    width: 20%;
+    float: left;
+}
+@media (min-width: 768px) {
+	.col-sm-15 {
+        width: 20%;
+        float: left;
+    }
+}
+@media (min-width: 992px) {
+    .col-md-15 {
+        width: 20%;
+        float: left;
+    }
+}
+@media (min-width: 1200px) {
+    .col-lg-15 {
+        width: 20%;
+        float: left;
+    }
+}
+
+/* Invisible scrollbar */
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+
+/* Global Styles */
+html,
+body {
+    height: 100%;
+	font-size: 15px;
+	color: #3a3a3a;
+}
+body {
+    padding-top: 90px;
+	background: #f4f4f4;
+	font-family: 'Roboto', serif;
+}
+hr {
+	margin: 0;
+	padding: 0;
+}
+.col-title,
+.col-name {
+	font-family: 'Roboto Slab', serif;
+}
+.col-title {
+	text-align: center;
+	font-weight: 700;
+	font-size: 2.3rem;
+	padding: 1.2rem 0;
+}
+.col-name {
+	padding-bottom: 1rem;
+	padding-top: 0.75rem;
+	font-size: 1.6rem;
+}
+.col-info {
+	font-family: 'EB Garamond', serif;
+	color: #5b5b5b;
+	margin-bottom: 30px;
+	padding: 0 20%;
+	font-size: 1.6rem;
+	line-height: 2rem;
+	text-align: center;
+}
+.container {
+	width: 90%;
+}
+
+/* Navigation */
+
+.home-navbar {
+	background: rgba(75, 214, 193, 0.95); /* #4bd6c1 */
+	border: none;
+}
+
+#myNavbar a {
+	color: white;
+	background-color: none;
+}
+
+#myNavbar li a:hover , #myNavbar li a:visited {
+	background-color: #4bd6c1;
+	box-shadow: 0 1px 15px rgba(0, 0, 0, 0.3);
+	transition: background-color .5s ease, box-shadow .5s ease;
+}
+
+.navbar-nav>.active>a:hover, .navbar-nav>.active>a:focus {
+	box-shadow: 2px 0 15px rgba(0, 0, 0, 0.2);
+	transition: background-color .5s ease, box-shadow .5s ease;
+}
+
+.navbar-nav>.active>a, .navbar-nav>.active>a:visited {
+	background-color: #4bd6c1;
+	box-shadow: 2px 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-toggle {
+	border: none;
+	background: transparent;
+}
+
+.icon-bar {
+	background: #ffffff;
+	padding: 0;
+	margin: 6px;
+	margin-top: 8px;
+}
+
+.navbar-header {
+	padding-bottom: 4px;
+}
+
+.navbar-nav li a {
+	line-height: 40px;
+}
+
+.navbar-collapse {
+	border: none;
+}
+
+.logout-icon {
+	height: 25px;
+}
+
+.anki-logo {
+	height: 40px;
+}
+
+/* Cards */
+
+.card-wrapper {
+	border: 0;
+	text-align: center;
+	padding: 0;
+	width: 200px;
+	height: 200px;
+	cursor: pointer;
+}
+
+.cg-icon {
+	width: 30%;
+}
+
+.cg-text {
+	padding: 8px;
+}
+
+.deck-name {
+	padding: 8px;
+	font-size: 1.15rem;
+}
+
+footer {
+    padding-top: 3%;
+	text-align: center;
+	color: #bbb;
+}
+
+/* Responsive Styles */
+
+@media(max-width:991px) {
+	.col-title {
+		font-size: 1.8rem;
+		padding: 0.9rem 0;
+	}
+	.col-name, .col-info {
+		font-size: 1.4rem;
+	}
+	.col-info {
+		line-height: 1.85rem;
+	}
+}
+
+@media(max-width:767px) {
+	.col-title {
+		font-size: 1.4rem;
+	}
+	.col-name, .col-info {
+		font-size: 1.2rem;
+	}
+	.col-info {
+		padding: 0 10%;
+		line-height: 1.65rem;
+	}
+}
+
+@media(max-width:480px) {
+	.col-title {
+		font-size: 1.2rem;
+	}
+	.col-name {
+		font-size: 1rem;
+	}
+	.col-info {
+		padding: 0;
+		line-height: 1.5rem;
+		font-size: 1.1rem
+	}
+	.card-wrapper {
+		height: 170px;
+		width: 170px;
+	}
+	body {
+		font-size: 0.85rem;
+	}
+	.deck-name {
+		font-size: 0.95rem;
+	}
+}
