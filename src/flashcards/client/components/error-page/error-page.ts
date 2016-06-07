@@ -6,9 +6,9 @@ import {FormBuilder, ControlGroup, Validators, Control} from 'angular2/common';
 import {Router} from 'angular2/router';
  
 @Component({
-  selector: 'ErrorPage',
+  selector: 'error-page',
    styleUrls: [
-    '/client/components/error-page/style.css'],
+    '/client/components/error-page/style.less'],
   templateUrl: '/client/components/error-page/error-page.html'
 })
 

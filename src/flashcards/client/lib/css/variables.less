@@ -11,10 +11,37 @@
 @text-light: #ededed;
 @text-action: #4bd6c1;
 
+@font-default: 'Roboto', serif;
+@font-thick: 'Roboto Slab', sans-serif;
+
 .btn-action(@btn-color) {
   background-color: @btn-color;
   border: none;
   border-radius: 2em;
   color: @text-light;
   font-family: 'Roboto Slab', sans-serif;
+}
+
+.bg-dark() {
+  background: @bg-dark;
+  color: #fff;
+  display: block;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.bg-fullpage(@bg-color, @url) {
+  background-color: @bg-color;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-image: url(@url);
+  display: block;
+  height: 100%;
+}
+
+.font-heavy() {
+  font-family: @font-thick;
+  font-weight: 700;
 }
