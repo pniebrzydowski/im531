@@ -1,28 +1,7 @@
 @import "/client/lib/css/variables";
 
-/* Fonts */
-@import url(https://fonts.googleapis.com/css?family=Roboto:400);
-@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
-@import url(https://fonts.googleapis.com/css?family=EB+Garamond);
-
-
-/* ************** */
-
-*, *:before, *:after {
-  box-sizing: border-box;
-}
-
 login-form {
-  /* Background image */
-  background-color: #98beae;
-  background-image: url("/img/bg-desk03.jpg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  display: block;
-  height: 100%;
-  font-size: 15px;
+  .bg-fullpage(#98beae, "/img/bg-desk03.jpg");
 
   .forgot {
     a {
@@ -108,7 +87,7 @@ login-form {
   /**********************/
   
   h1 {
-    font-family: 'Roboto Slab', serif;
+    .font-heavy();
     text-align: center;
     font-size: 20px;
     color: #ffffff;
@@ -201,8 +180,8 @@ login-form {
     border-radius: 5px;
     padding: 15px 0;
     font-weight: bold;
-    background: #f5f5f5;
-    color: #5b5b5b;
+    background: @bg-light;
+    color: @text-dark;
     margin-bottom: 40px;
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;

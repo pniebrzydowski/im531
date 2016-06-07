@@ -1,11 +1,7 @@
 @import "/client/lib/css/variables";
 
 deck-settings {
-  background: @bg-dark;
-  color: #fff;
-  display: block;
-  min-height: 100%;
-  overflow: hidden;
+  .bg-dark();
 
   .container-fluid {
     margin-left: auto;
@@ -13,15 +9,14 @@ deck-settings {
   }
   
   h1 {
+    .font-heavy();
     padding-top: 2em;
     margin-bottom: 2em;
-    font-family: 'Roboto Slab', sans-serif;
-    font-weight: 700;
     font-size: 2.3rem;
   }
   
   h3 {
-    font-family: 'Roboto Slab', sans-serif;
+    font-family: @font-thick;
   }
   
   .btn-round{

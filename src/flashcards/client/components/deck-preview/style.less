@@ -1,11 +1,7 @@
 @import "/client/lib/css/variables";
 
 deck-preview {
-  background: @bg-dark;
-  color: #fff;
-  display: block;
-  min-height: 100%;
-  overflow: hidden;
+  .bg-dark();
   padding-top: 3%;
 
   ::-webkit-scrollbar {
@@ -20,13 +16,12 @@ deck-preview {
     text-align: center;
   }
   .deck-name {
-    font-weight: 700;
+    .font-heavy();
     font-size: 2.3rem;
     padding-bottom: 20px;
-    font-family: 'Roboto Slab', serif;
   }
   .button {
-    font-family: 'Roboto Slab', serif;
+    .font-heavy();
     box-shadow: none;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
@@ -62,13 +57,12 @@ deck-preview {
     padding-top: 20px;
   }
   .deck-info, .game-sets {
-    font-family: 'Roboto Slab', serif;
+    font-family: @font-thick;
     font-size: 1.3rem;
     text-align: center;
     padding: 8px 15px;
   }
   .info-content {
-    font-family: 'Roboto', serif;
     font-size: 1rem;
     text-align: left;
     padding-top: 10px;

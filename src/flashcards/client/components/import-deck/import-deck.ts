@@ -103,18 +103,6 @@ export class ImportDeck implements AfterViewInit {
 		if (this.importForm.valid && this.inputFile) {
 		  var _this = this;
 		  var _wordCt = this.words.length;
-		  
-		  /*let docs = [];
-		  for(let i in this.words) {
-		    docs.push({
-		      front: this.words[i].Front,
-          back: this.words[i].Back,
-          score: 0,
-          creator: Meteor.userId(),
-          deckid: this.params.get('deckId')
-		    });
-		  }
-		  this.insertBulk(Words,docs);*/
 				
     	for(let i in this.words) {
         setTimeout( function() {
@@ -144,28 +132,6 @@ export class ImportDeck implements AfterViewInit {
 		}
 		return wordCt;
 	}
-	
-	insertBulk = function(collection, documents){
-    if(collection) {
-      return _.compact(_.map(documents, function(item){
-        if(_.isObject(item)) {
-          var _id = collection._makeNewID();
-
-          // insert with reactivity only on the last item
-          if(_.last(documents) === item)
-            _id = collection.insert(item);
-
-          // insert without reactivity
-          else {
-            item._id = _id;
-            collection._collection._docs._map[_id] = item;
-          }
-
-          return _id;
-        }
-      }));
-    }
-  }
 	
 	 openWindow() {
     this.showWindow = true;
