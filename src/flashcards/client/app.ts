@@ -8,6 +8,7 @@ import {LoginForm} from './components/login-form/login-form';
 import {ErrorPage} from './components/error-page/error-page';
 import {SignupForm} from './components/signup-form/signup-form';
 import {DeckList} from './components/deck-list/deck-list';
+import {AudioInput} from './components/audio-input/audio-input';
 import {AddDeckForm} from './components/add-deck-form/add-deck-form';
 import {DeckPreview} from './components/deck-preview/deck-preview';
 import {DeckSettings} from './components/deck-settings/deck-settings';
@@ -21,6 +22,7 @@ import {ReviewWords} from './components/review-words/review-words';
 
 @RouteConfig([
 	{ path: '/', as: 'DeckList', component: DeckList },
+  { path: '/audio', as: 'AudioInput', component: AudioInput },
 	{ path: '/login', as: 'LoginForm', component: LoginForm },
 	{ path: '/signup', as: 'SignupForm', component: SignupForm },
 	{ path: '/create', as: 'AddDeckForm', component: AddDeckForm },
